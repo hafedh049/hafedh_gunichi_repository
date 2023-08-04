@@ -1,0 +1,40 @@
+name: hafedh_gunichi
+description: Hafedh Gunichi's Personal Portfolio.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  flutter_animate: ^4.2.0+1
+  fluttertoast: ^8.2.2
+  font_awesome_flutter: ^10.5.0
+  get: ^4.6.5
+  google_fonts: ^5.1.0
+  lottie: ^2.5.0
+  firebase_core: ^2.15.0
+  url_strategy: ^0.2.0
+  animated_text_kit: ^4.2.2
+  url_launcher: ^6.1.12
+  avatar_stack: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/lotties/
+    - assets/icons/
+    - assets/images/
