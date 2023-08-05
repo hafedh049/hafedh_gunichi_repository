@@ -441,7 +441,7 @@ class _SkillGlassState extends State<SkillGlass> {
               decoration: BoxDecoration(
                 boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(image: AssetImage("assets/${widget.data['image']}"), fit: BoxFit.cover),
+                image: DecorationImage(image: AssetImage("assets/${widget.data['image']}"), fit: BoxFit.contain),
               ),
             ),
             const SizedBox(width: 20),
