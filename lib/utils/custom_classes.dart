@@ -348,27 +348,115 @@ class _EducationGlassState extends State<EducationGlass> {
   bool _isHovered = false;
   @override
   Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 50),
+      child: Row(
+        children: <Widget>[
+          Container(color: grey, width: 20, height: 1),
+          const SizedBox(width: 20),
+          InkWell(
+            onHover: (bool value) => setState(() => _isHovered = value),
+            onTap: () => true,
+            child: AnimatedScale(
+              duration: 300.ms,
+              scale: _isHovered ? 1.01 : 1,
+              child: AnimatedContainer(
+                duration: 100.ms,
+                width: 500,
+                height: 300,
+                decoration: BoxDecoration(
+                  color: _isHovered ? hoverediconContainerColor : iconContainerColor,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+                ),
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            CustomizedText(text: widget.data["title"], color: white, fontSize: 20),
+                            const SizedBox(height: 10),
+                            CustomizedText(text: widget.data["subtitle"], color: grey),
+                          ],
+                        ),
+                        const Spacer(),
+                        Container(
+                          decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(3), border: Border.all(color: grey, width: .1)),
+                          padding: const EdgeInsets.all(8),
+                          child: CustomizedText(text: widget.data["state"], color: widget.data["state"] == "PASSED" ? green : blue, fontWeight: FontWeight.bold),
+                        ).animate(onComplete: (AnimationController controller) => controller.repeat(reverse: true)).shimmer(duration: 3.seconds, color: grey.withOpacity(.2), colors: <Color>[grey.withOpacity(.1), white.withOpacity(.2)]),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    const Divider(indent: 15, endIndent: 15, color: grey, height: .3, thickness: .3),
+                    const SizedBox(height: 20),
+                    Flexible(child: CustomizedText(text: widget.data["description"], color: grey, fontSize: 16)),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SkillGlass extends StatefulWidget {
+  const SkillGlass({super.key, required this.data, required this.title});
+  final Map<String, dynamic> data;
+  final String title;
+  @override
+  State<SkillGlass> createState() => _SkillGlassState();
+}
+
+class _SkillGlassState extends State<SkillGlass> {
+  bool _isHovered = false;
+  @override
+  Widget build(BuildContext context) {
     return InkWell(
       onHover: (bool value) => setState(() => _isHovered = value),
-      onTap: () => true,
-      child: AnimatedScale(
-        duration: 300.ms,
-        scale: _isHovered ? 1.01 : 1,
-        child: AnimatedContainer(
-          duration: 100.ms,
-          width: 300,
-          height: 250,
-          decoration: BoxDecoration(
-            color: _isHovered ? hoverediconContainerColor : iconContainerColor,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
-          ),
-          padding: const EdgeInsets.all(24),
-          child: const Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[],
-          ),
+      onTap: () async => true,
+      child: AnimatedContainer(
+        duration: 100.ms,
+        width: 500,
+        margin: EdgeInsets.only(bottom: _isHovered ? 3 : 0),
+        decoration: BoxDecoration(
+          color: _isHovered ? hoverediconContainerColor : iconContainerColor,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+        ),
+        padding: const EdgeInsets.all(24),
+        child: Row(
+          children: <Widget>[
+            Container(
+              width: 100,
+              height: 150,
+              decoration: BoxDecoration(
+                boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(image: AssetImage("assets/${widget.data['image']}"), fit: BoxFit.cover),
+              ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  CustomizedText(text: widget.title, color: grey, fontSize: 20, fontWeight: FontWeight.bold),
+                  const SizedBox(height: 20),
+                  CustomizedText(text: widget.data["description"], color: grey),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
