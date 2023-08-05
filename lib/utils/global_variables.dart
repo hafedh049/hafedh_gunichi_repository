@@ -20,9 +20,9 @@ const Color blue = Colors.blue;
 const String description = "I am proficient in Flutter, Django, and Firebase, which gives me the skills to build high-quality, scalable, and reliable mobile and web applications. I have a deep understanding of these technologies and how they can be used to create innovative and user-friendly applications.";
 
 const List<Map<String, dynamic>> features = <Map<String, dynamic>>[
-  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "image": "", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "image": "", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "image": "", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
 ];
 
 const List<Map<String, dynamic>> portfolios = <Map<String, dynamic>>[
@@ -129,6 +129,7 @@ const Map<String, double> programmingLanguages = <String, double>{
 
 const Map<String, double> frameworks = <String, double>{
   "Flutter": 95,
+  "Dart Frog": 90,
   "Django": 75,
   "Flask": 80,
   "Spring Boot": 20,
@@ -152,7 +153,8 @@ const Map<String, Map<String, dynamic>> databases = <String, Map<String, dynamic
   "MongoDB": <String, dynamic>{"image": "images/mongo_db.png", "description": "MongoDB is a NoSQL database that is document-oriented. This means that data is stored in JSON documents, which makes it more flexible than traditional RDBMSs. MongoDB is a popular choice for web applications and mobile applications."},
   "Cassandra": <String, dynamic>{"image": "images/cassandra.png", "description": "Apache Cassandra is a distributed NoSQL database that is designed to be scalable and fault-tolerant. It is a good option for applications that need to be able to handle a lot of data and that need to be able to recover from failures."},
   "Milvus": <String, dynamic>{"image": "images/milvus.png", "description": "Milvus is a vector database that is designed to be scalable and efficient. It is a good option for applications that need to be able to store and query large amounts of high-dimensional data."},
-  "Neo4j": <String, dynamic>{"image": "images/neo4j.png", "description": " Neo4j is a graph database that is designed to be able to store and query relationships between data. It is a good option for applications that need to be able to represent and analyze relationships between data."},
+  "Neo4j": <String, dynamic>{"image": "images/neo4j.png", "description": "Neo4j is a graph database that is designed to be able to store and query relationships between data. It is a good option for applications that need to be able to represent and analyze relationships between data."},
+  "CockroachDB": <String, dynamic>{"image": "images/cockroach_db.png", "description": "CockroachDB (NewSQL) is a distributed SQL database that is designed for high availability, scalability, and horizontal scaling. It is a popular choice for web applications, microservices, and other applications that need to be able to handle a lot of traffic."},
 };
 
 const Map<String, Map<String, dynamic>> vcs = <String, Map<String, dynamic>>{
@@ -188,6 +190,7 @@ const Map<String, Map<String, dynamic>> buildAutomationTools = <String, Map<Stri
   "Maven": <String, dynamic>{"image": "images/maven.png", "description": "Maven is an open-source build automation tool that is based on the Java language. Maven is known for its simplicity and its ability to be used with a variety of projects."},
   "Gradle": <String, dynamic>{"image": "images/gradle.png", "description": "Gradle is an open-source build automation tool that is based on the Groovy language. Gradle is known for its powerful features and its ability to be used with a variety of programming languages."},
   "Jenkins": <String, dynamic>{"image": "images/jenkins.png", "description": "Jenkins is an open-source automation server that can be used to automate a wide range of tasks, including building, testing, and deploying software. Jenkins is known for its flexibility and its large community of plugins."},
+  "Codemagic": <String, dynamic>{"image": "images/codemagic.jpg", "description": "Codemagic is a build automation tool. It is a cloud-based service that automates the process of building, testing, and deploying mobile apps. Codemagic can be used to build apps for Android, iOS, and React Native."},
 };
 
 const Map<String, Map<String, dynamic>> testTools = <String, Map<String, dynamic>>{
@@ -199,7 +202,7 @@ const Map<String, Map<String, dynamic>> testTools = <String, Map<String, dynamic
 
 const Map<String, Map<String, dynamic>> solutionsDeployment = <String, Map<String, dynamic>>{
   "Docker Swarm": <String, dynamic>{"image": "images/docker.png", "description": "Docker Swarm is a container orchestration system that is built on top of Docker. It is used to automate the deployment, scaling, and management of Docker containers."},
-  "Kubernetes": <String, dynamic>{"image": "images/kubernetes.png", "description": " Kubernetes is an open-source container orchestration system. It is used to automate the deployment, scaling, and management of containerized applications."},
+  "Kubernetes": <String, dynamic>{"image": "images/kubernetes.png", "description": "Kubernetes is an open-source container orchestration system. It is used to automate the deployment, scaling, and management of containerized applications."},
 };
 
 const Map<String, Map<String, dynamic>> designTools = <String, Map<String, dynamic>>{
@@ -233,62 +236,62 @@ const List<Widget> professionalSkills = <Widget>[
   DevelopmentSkillsAndFrameworks(),
   OtherSkills(
     data: baaSs,
-    header: '',
-    subheader: '',
+    header: 'Backend as a Service Solutions',
+    subheader: 'The backend solutions i used through my carrer.',
   ),
   OtherSkills(
     data: databases,
-    header: '',
-    subheader: '',
+    header: 'Databases & DBMSs',
+    subheader: 'Types of databases (respctively DBMSs) i worked with (Relational, NOSQL, NewSql)',
   ),
   OtherSkills(
     data: vcs,
-    header: '',
-    subheader: '',
+    header: 'Version Control Systems',
+    subheader: 'Version control systems allow developers to track changes to code over time, collaborate on projects, and recover from mistakes.',
   ),
   OtherSkills(
     data: ides,
-    header: '',
-    subheader: '',
+    header: 'IDEs (Integrated Development Environment)',
+    subheader: 'IDEs provide a comprehensive set of tools to help developers write, debug, and deploy code more efficiently.',
   ),
   OtherSkills(
     data: gamesAndPhysicsEngines,
-    header: '',
-    subheader: '',
+    header: 'Games & Physics Engines I Knew',
+    subheader: 'Game engines provide a comprehensive set of tools and libraries to help developers create games more efficiently.',
   ),
   OtherSkills(
     data: buildAutomationTools,
-    header: '',
-    subheader: '',
+    header: 'Build Automation Tools',
+    subheader: 'Build automation tools help developers to automate the process of building, testing, and deploying software.',
   ),
   OtherSkills(
     data: testTools,
-    header: '',
-    subheader: '',
+    header: 'Testing Tools',
+    subheader: 'Testing tools help developers to find and fix bugs in their code before it is released to production.',
   ),
   OtherSkills(
     data: solutionsDeployment,
-    header: '',
-    subheader: '',
+    header: 'Solution Deployment',
+    subheader: 'Solution deployments help developers to deploy their code to production in a consistent and repeatable way.',
   ),
   OtherSkills(
     data: designTools,
-    header: '',
-    subheader: '',
+    header: 'Design Tools',
+    subheader: 'The design tools I used.',
   ),
   OtherSkills(
     data: osAndDistributions,
-    header: '',
-    subheader: '',
+    header: 'Operation Systems & Distributions',
+    subheader: 'These are the Os(s) & the Destributions i used.',
   ),
   OtherSkills(
     data: electronics,
-    header: '',
-    subheader: '',
+    header: 'Hardware',
+    subheader: "The hardware I'm using to build projects.",
   ),
   OtherSkills(
     data: interestedTopics,
-    header: '',
-    subheader: '',
+    header: 'New Technologies',
+    subheader: "Topics I'm keen of",
   ),
 ];
