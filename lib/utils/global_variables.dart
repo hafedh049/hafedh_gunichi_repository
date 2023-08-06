@@ -342,3 +342,6 @@ const List<Map<String, dynamic>> plans = <Map<String, dynamic>>[
     "delivery": "30 Days Delivery",
   },
 ];
+
+const String myPhoneNumber = "+216 23 566 502";
+const String myEmail = "hafedhgunichi@gmail.com";

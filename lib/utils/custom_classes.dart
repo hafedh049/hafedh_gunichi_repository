@@ -46,7 +46,7 @@ class _IconGlassState extends State<IconGlass> {
           boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
         ),
         padding: const EdgeInsets.all(12),
-        child: widget.image != null ? Image.asset("assets/icons/${widget.image}", width: 25, height: 25) : FaIcon(widget.icon, color: _isHovered ? white : iconColor),
+        child: widget.image != null ? Image.asset("assets/icons/${widget.image}", color: !_isHovered ? null : reddish, width: 25, height: 25) : FaIcon(widget.icon, color: !_isHovered ? white : reddish),
       ),
     );
   }
