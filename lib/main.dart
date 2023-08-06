@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:get/get.dart';
-import 'package:hafedh_gunichi/web/resume.dart';
+import 'package:hafedh_gunichi/web/pricing.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
@@ -16,6 +15,6 @@ class MainEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(debugShowCheckedModeBanner: false, title: "Hafedh Gunichi", home: Resume());
+    return const MaterialApp(debugShowCheckedModeBanner: false, title: "Hafedh Gunichi", home: Pricing());
   }
 }

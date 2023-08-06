@@ -49,7 +49,7 @@ class _ResumeState extends State<Resume> {
                     children: <Widget>[
                       for (final String key in resumeTabBar.keys)
                         Expanded(
-                          child: ResumeTab(
+                          child: Tabulation(
                             tab: key,
                             selected: resumeTabBar[key]!["state"],
                             func: () => _(

@@ -289,16 +289,16 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
   }
 }
 
-class ResumeTab extends StatefulWidget {
-  const ResumeTab({super.key, required this.tab, required this.selected, required this.func});
+class Tabulation extends StatefulWidget {
+  const Tabulation({super.key, required this.tab, required this.selected, required this.func});
   final String tab;
   final void Function() func;
   final bool selected;
   @override
-  State<ResumeTab> createState() => _ResumeTabState();
+  State<Tabulation> createState() => _TabulationState();
 }
 
-class _ResumeTabState extends State<ResumeTab> {
+class _TabulationState extends State<Tabulation> {
   bool _isHovered = false;
   @override
   Widget build(BuildContext context) {
@@ -313,7 +313,7 @@ class _ResumeTabState extends State<ResumeTab> {
                 boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
               ),
               padding: const EdgeInsets.all(12),
-              child: Center(child: CustomizedText(text: widget.tab, color: reddish, fontSize: 25, letterSpacing: 2)),
+              child: Center(child: CustomizedText(text: widget.tab, color: reddish, fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2)),
             )
           : AnimatedSwitcher(
               duration: 300.ms,
@@ -328,10 +328,10 @@ class _ResumeTabState extends State<ResumeTab> {
                           boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
                         ),
                         padding: const EdgeInsets.all(12),
-                        child: Center(child: CustomizedText(text: widget.tab, color: reddish, fontSize: 25, letterSpacing: 2)),
+                        child: Center(child: CustomizedText(text: widget.tab, color: reddish, fontWeight: _isHovered ? FontWeight.bold : FontWeight.normal, fontSize: 20, letterSpacing: 2)),
                       ),
                     )
-                  : Center(child: CustomizedText(text: widget.tab, color: white, fontSize: 25, letterSpacing: 2)),
+                  : Center(child: CustomizedText(text: widget.tab, color: white, fontSize: 20, letterSpacing: 2)),
             ),
     );
   }
@@ -459,6 +459,56 @@ class _SkillGlassState extends State<SkillGlass> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class BackAndForth extends StatefulWidget {
+  const BackAndForth({super.key, required this.back, required this.forth});
+  final void Function() back;
+  final void Function() forth;
+
+  @override
+  State<BackAndForth> createState() => _BackAndForthState();
+}
+
+class _BackAndForthState extends State<BackAndForth> {
+  bool _isBackHovered = false;
+  bool _isForthHovered = false;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        InkWell(
+          onTap: widget.back,
+          onHover: (bool value) => setState(() => _isBackHovered = value),
+          child: AnimatedContainer(
+            duration: 300.ms,
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: _isBackHovered ? iconContainerColor : hoverediconContainerColor,
+              boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+            ),
+            child: Center(child: Icon(FontAwesomeIcons.chevronLeft, size: 35, color: _isBackHovered ? reddish : grey)),
+          ),
+        ),
+        const SizedBox(width: 20),
+        InkWell(
+          onTap: widget.forth,
+          onHover: (bool value) => setState(() => _isForthHovered = value),
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: _isForthHovered ? iconContainerColor : hoverediconContainerColor,
+              boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+            ),
+            child: Center(child: Icon(FontAwesomeIcons.chevronRight, size: 35, color: _isForthHovered ? reddish : grey)),
+          ),
+        ),
+      ],
     );
   }
 }

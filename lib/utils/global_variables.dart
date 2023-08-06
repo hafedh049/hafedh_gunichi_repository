@@ -16,6 +16,7 @@ const Color reddish = Color.fromRGBO(255, 1, 79, 1);
 const Color grey = Color.fromRGBO(167, 177, 188, 1);
 const Color green = Colors.green;
 const Color blue = Colors.blue;
+const Color yellow = Colors.yellow;
 
 const String description = "I am proficient in Flutter, Django, and Firebase, which gives me the skills to build high-quality, scalable, and reliable mobile and web applications. I have a deep understanding of these technologies and how they can be used to create innovative and user-friendly applications.";
 
@@ -294,4 +295,50 @@ const List<Widget> professionalSkills = <Widget>[
     header: 'New Technologies',
     subheader: "Topics I'm keen of",
   ),
+];
+
+const List<Map<String, String>> testimonials = <Map<String, String>>[
+  <String, String>{
+    "testimony": '"I hired Hafedh GUNICHI to develop a Flutter and Firebase app for my business, and I was very impressed with his skills and expertise. He was able to quickly understand my requirements and develop an app that met my needs perfectly. The app is well-designed, easy to use, and secure. I would highly recommend him to anyone looking for a Flutter and Firebase developer."',
+    "job": 'SILMA',
+    "name": 'Faycel Zayani',
+    "position": 'CEO',
+    "image": "testimonial.png",
+    "todo": 'Business Application',
+    "period": 'Aug 4, 2022 - Sep 1, 2022',
+    "rating": "4",
+  },
+];
+
+final List<Map<String, dynamic>> pricingTabs = <Map<String, dynamic>>[
+  {"header": "Static", "hover": true, "id": 0},
+  {"header": "Standard", "hover": false, "id": 1},
+  {"header": "Premium", "hover": false, "id": 2},
+];
+
+const List<Map<String, dynamic>> plans = <Map<String, dynamic>>[
+  <String, dynamic>{
+    "title": "Silver Package",
+    "subtitle": "HARD CODED",
+    "description": "1 Page - Static Information App with Splash Screen as a gift.",
+    "price": "30",
+    "tasks": <String>["Functional app", "2 operating systems", "App icon", "Splash screen", "Source code"],
+    "delivery": "10 Days Delivery",
+  },
+  <String, dynamic>{
+    "title": "Gold Package",
+    "subtitle": "HARD CODED",
+    "description": "5 Pages - Dynamic and Responsive App with Signup, Login, Firebase Auth, Profile and Database.",
+    "price": "60",
+    "tasks": <String>["Functional app", "2 operating systems", "App icon", "Splash screen", "Source code"],
+    "delivery": "21 Days Delivery",
+  },
+  <String, dynamic>{
+    "title": "Platinum Package",
+    "subtitle": "HARD CODED",
+    "description": "15 Pages - Large Scale, High Quality App with Geo-Fencing, Chat, Payments, Backend Server and More.",
+    "price": "90",
+    "tasks": <String>["Functional app", "2 operating systems", "App icon", "Splash screen", "Source code"],
+    "delivery": "30 Days Delivery",
+  },
 ];
