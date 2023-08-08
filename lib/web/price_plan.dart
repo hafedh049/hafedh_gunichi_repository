@@ -36,7 +36,7 @@ class PricePlan extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           CustomizedText(text: plan['description'], color: grey, fontSize: 16, letterSpacing: 2),
-          const SizedBox(height: 40),
+          const Spacer(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -76,16 +76,19 @@ class PricePlan extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 48),
-            decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(7), border: Border.all(color: grey, width: .1)),
-            padding: const EdgeInsets.all(8),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                CustomizedText(text: "CONTACT ME ", color: reddish, fontSize: 20),
-                Icon(FontAwesomeIcons.chevronRight, color: reddish, size: 25),
-              ],
+          Center(
+            child: Container(
+              height: 50,
+              width: 200,
+              decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(7), border: Border.all(color: Colors.black, width: .1)),
+              padding: const EdgeInsets.all(8),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CustomizedText(text: "CONTACT ME ", color: reddish, fontSize: 20),
+                  Icon(FontAwesomeIcons.chevronRight, color: reddish, size: 20),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 20),

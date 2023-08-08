@@ -1,8 +1,11 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hafedh_gunichi/utils/global_variables.dart';
@@ -37,16 +40,23 @@ class _IconGlassState extends State<IconGlass> {
     return InkWell(
       onHover: (bool value) => setState(() => _isHovered = value),
       onTap: () async => widget.url != null ? await launchUrlString(widget.url!) : null,
-      child: AnimatedContainer(
+      child: AnimatedScale(
         duration: 100.ms,
-        margin: EdgeInsets.only(bottom: _isHovered ? 3 : 0),
-        decoration: BoxDecoration(
-          color: _isHovered ? hoverediconContainerColor : iconContainerColor,
-          borderRadius: BorderRadius.circular(5),
-          boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+        scale: _isHovered ? 1.1 : 1,
+        child: AnimatedContainer(
+          duration: 100.ms,
+          decoration: BoxDecoration(
+            color: _isHovered ? hoverediconContainerColor : iconContainerColor,
+            borderRadius: BorderRadius.circular(5),
+            boxShadow: <BoxShadow>[BoxShadow(blurRadius: 5, spreadRadius: 5, color: grey.withOpacity(.05), offset: const Offset(-3, -3))],
+          ),
+          padding: const EdgeInsets.all(12),
+          child: widget.image != null
+              ? widget.image!.endsWith(".svg")
+                  ? SvgPicture.asset("assets/svgs/${widget.image}", color: !_isHovered ? white : reddish, width: 25, height: 25)
+                  : Image.asset("assets/icons/${widget.image}", color: !_isHovered ? null : reddish, width: 25, height: 25)
+              : FaIcon(widget.icon, color: !_isHovered ? white : reddish),
         ),
-        padding: const EdgeInsets.all(12),
-        child: widget.image != null ? Image.asset("assets/icons/${widget.image}", color: !_isHovered ? null : reddish, width: 25, height: 25) : FaIcon(widget.icon, color: !_isHovered ? white : reddish),
       ),
     );
   }
@@ -185,13 +195,7 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
                               decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
                               padding: const EdgeInsets.all(8),
                               child: const Center(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
-                                    Icon(FontAwesomeIcons.chevronRight, color: reddish, size: 15),
-                                  ],
-                                ),
+                                child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ],

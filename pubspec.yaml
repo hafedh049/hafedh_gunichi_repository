@@ -26,8 +26,11 @@ dependencies:
   flutter_animation_progress_bar: ^2.3.1
   simple_circular_progress_bar: ^1.0.2
   flutter_rating_bar: ^4.0.1
-  sizer: ^2.0.15
+  #sizer: ^2.0.15
   smooth_page_indicator: ^1.1.0
+  syncfusion_flutter_maps: ^22.2.7
+  syncfusion_flutter_barcodes: ^22.2.7
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -43,3 +46,5 @@ flutter:
     - assets/lotties/
     - assets/icons/
     - assets/images/
+    - assets/geo_maps/
+    - assets/svgs/

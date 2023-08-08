@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hafedh_gunichi/web/contact_me.dart';
 import 'package:hafedh_gunichi/web/development_skills_and_frameworks.dart';
 import 'package:hafedh_gunichi/web/education.dart';
 import 'package:hafedh_gunichi/web/experience.dart';
+import 'package:hafedh_gunichi/web/features.dart';
+import 'package:hafedh_gunichi/web/footer.dart';
+import 'package:hafedh_gunichi/web/general_information.dart';
+import 'package:hafedh_gunichi/web/home.dart';
 import 'package:hafedh_gunichi/web/interview.dart';
 import 'package:hafedh_gunichi/web/other_skills.dart';
+import 'package:hafedh_gunichi/web/portfolio.dart';
+import 'package:hafedh_gunichi/web/pricing.dart';
 import 'package:hafedh_gunichi/web/professional_skills.dart';
+import 'package:hafedh_gunichi/web/quotes.dart';
+import 'package:hafedh_gunichi/web/resume.dart';
+import 'package:hafedh_gunichi/web/testimonial.dart';
 
 const Color backgroundColor = Color.fromRGBO(33, 36, 40, 1);
 const Color iconContainerColor = Color.fromRGBO(24, 26, 30, 1);
@@ -18,7 +28,7 @@ const Color green = Colors.green;
 const Color blue = Colors.blue;
 const Color yellow = Colors.yellow;
 
-const String description = "I am proficient in Flutter, Django, and Firebase, which gives me the skills to build high-quality, scalable, and reliable mobile and web applications. I have a deep understanding of these technologies and how they can be used to create innovative and user-friendly applications.";
+const String description = "I am proficient in Flutter, Django, and Firebase, which gives me the skills to build high-quality, scalable, and reliable mobile, desktop and web applications. I have a deep understanding of these technologies and how they can be used to create innovative and user-friendly applications.";
 
 const List<Map<String, dynamic>> features = <Map<String, dynamic>>[
   <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
@@ -277,7 +287,7 @@ const List<Widget> professionalSkills = <Widget>[
   ),
   OtherSkills(
     data: designTools,
-    header: 'Design Tools',
+    header: 'Design Tools & Video Edition',
     subheader: 'The design tools I used.',
   ),
   OtherSkills(
@@ -345,3 +355,25 @@ const List<Map<String, dynamic>> plans = <Map<String, dynamic>>[
 
 const String myPhoneNumber = "+216 23 566 502";
 const String myEmail = "hafedhgunichi@gmail.com";
+
+const List<String> quotes = <String>[
+  '"The only thing that is constant is change." - Heraclitus',
+  '"The journey of a thousand miles begins with a single step." - Lao Tzu',
+  '"The best way to predict the future is to create it." - Peter Drucker',
+  '"The only way to do great work is to love what you do." - Steve Jobs',
+];
+
+final List<Map<String, dynamic>> screens = <Map<String, dynamic>>[
+  <String, dynamic>{"title": "Home", "screen": const Home(), "state": false, "clicked": true},
+  <String, dynamic>{"title": "Features", "screen": const Feature(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Resume", "screen": const Resume(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Testimonies", "screen": const Testimonail(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Pricing", "screen": const Pricing(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Contact", "screen": const Contact(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Quotes", "screen": const Quote(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Footer", "screen": const Footer(), "state": false, "clicked": false},
+];
+
+const List<String> qrCodes = <String>["Hafedh GUNICHI", "+216 23 566 502", "hafedhgunichi@gmail.com", "Mobile Developer (Flutter)"];

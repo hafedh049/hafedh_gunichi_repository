@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:hafedh_gunichi/web/contact_me.dart';
+import 'package:hafedh_gunichi/web/holder.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
@@ -15,6 +15,6 @@ class MainEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, title: "Hafedh Gunichi", home: Contact());
+    return const MaterialApp(debugShowCheckedModeBanner: false, title: "Hafedh Gunichi", home: Holder());
   }
 }

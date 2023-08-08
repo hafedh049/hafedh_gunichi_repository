@@ -8,33 +8,32 @@ class Feature extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        width: MediaQuery.sizeOf(context).width,
-        height: MediaQuery.sizeOf(context).height,
-        color: backgroundColor,
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const CustomizedText(text: "FEATURES", color: reddish, letterSpacing: 2),
-              const SizedBox(height: 20),
-              const CustomizedText(text: "WHAT I DO ?", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
-              const SizedBox(height: 20),
-              Flexible(
-                child: SingleChildScrollView(
-                  child: Wrap(
-                    spacing: 40,
-                    runSpacing: 40,
-                    children: <Widget>[for (final Map<String, dynamic> feature in features) FeatureGlassContainer(data: feature)],
-                  ),
+    return Container(
+      padding: const EdgeInsets.all(48),
+      width: MediaQuery.sizeOf(context).width,
+      height: MediaQuery.sizeOf(context).height,
+      color: backgroundColor,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const CustomizedText(text: "FEATURES", color: reddish, letterSpacing: 2),
+            const SizedBox(height: 20),
+            const CustomizedText(text: "WHAT I DO ?", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+            const SizedBox(height: 20),
+            Flexible(
+              child: SingleChildScrollView(
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.end,
+                  spacing: 40,
+                  runSpacing: 40,
+                  children: <Widget>[for (final Map<String, dynamic> feature in features) FeatureGlassContainer(data: feature)],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
