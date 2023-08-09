@@ -64,7 +64,6 @@ class _ContactMobState extends State<ContactMob> {
                   children: <Widget>[
                     Flexible(
                       child: Container(
-                        width: 452,
                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),

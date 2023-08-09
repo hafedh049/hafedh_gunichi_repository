@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:hafedh_gunichi/utils/custom_classes.dart';
 import 'package:hafedh_gunichi/utils/global_variables.dart';
@@ -23,6 +24,7 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
+    FlutterNativeSplash.remove();
     _animationController = AnimationController(vsync: this, duration: 1.seconds);
     _scrollbar.addListener(
       () {
@@ -74,9 +76,16 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 48),
                   child: Row(
                     children: <Widget>[
-                      const CircleAvatar(radius: 20, backgroundColor: backgroundColor, backgroundImage: AssetImage("assets/images/me.jpg")),
-                      const SizedBox(width: 10),
-                      const CustomizedText(text: "HAFEDH GUNICHI", color: white, fontWeight: FontWeight.bold, letterSpacing: 3).animate(onComplete: (AnimationController controller) => controller.loop(reverse: true)).shimmer(color: white, colors: <Color>[grey, white.withOpacity(.001)], duration: 3.seconds),
+                      GestureDetector(
+                        onTap: () => _scrollbar.animateTo(0, duration: 500.ms, curve: Curves.linear),
+                        child: Row(
+                          children: <Widget>[
+                            const CircleAvatar(radius: 20, backgroundColor: backgroundColor, backgroundImage: AssetImage("assets/images/me.jpg")),
+                            const SizedBox(width: 10),
+                            const CustomizedText(text: "HAFEDH GUNICHI", color: white, fontWeight: FontWeight.bold, letterSpacing: 3).animate(onComplete: (AnimationController controller) => controller.loop(reverse: true)).shimmer(color: white, colors: <Color>[grey, white.withOpacity(.001)], duration: 3.seconds),
+                          ],
+                        ),
+                      ),
                       const Spacer(),
                       StatefulBuilder(
                         key: _webHeadersKey,
@@ -87,10 +96,7 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
                               for (final Map<String, dynamic> item in screens.sublist(0, screens.length - 1))
                                 InkWell(
                                   onHover: (bool value) => _(() => item["state"] = value),
-                                  onTap: () {
-                                    _scrollbar.animateTo(MediaQuery.sizeOf(context).height * screens.indexOf(item), duration: 500.ms, curve: Curves.linear);
-                                    _(() => _selectedHeader = item["title"]);
-                                  },
+                                  onTap: () => _scrollbar.animateTo(MediaQuery.sizeOf(context).height * screens.indexOf(item), duration: 500.ms, curve: Curves.linear),
                                   child: Container(
                                     height: 80,
                                     margin: const EdgeInsets.only(left: 20),
