@@ -69,6 +69,7 @@ class _PricingState extends State<Pricing> {
                                   tab: header["header"],
                                   selected: header["hover"],
                                   func: () {
+                                    _item = header["header"];
                                     for (final Map<String, dynamic> entry in pricingTabs) {
                                       if (entry["header"] != _item) {
                                         entry["hover"] = false;
@@ -77,8 +78,7 @@ class _PricingState extends State<Pricing> {
                                       }
                                     }
                                     _(() => true);
-                                    if (header["header"] != _item) {
-                                      _item = header["header"];
+                                    if (header["header"] == _item) {
                                       _pageController.jumpToPage(pricingTabs.firstWhere((Map<String, dynamic> element) => element["header"] == _item)["id"]);
                                     }
                                   },

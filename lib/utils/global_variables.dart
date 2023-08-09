@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hafedh_gunichi/mobile/contact_mob.dart';
+import 'package:hafedh_gunichi/mobile/education_mob.dart';
+import 'package:hafedh_gunichi/mobile/home_mob.dart';
+import 'package:hafedh_gunichi/mobile/price_mob.dart';
+import 'package:hafedh_gunichi/mobile/professional_skill_mob.dart';
+import 'package:hafedh_gunichi/mobile/quotes_mob.dart';
+import 'package:hafedh_gunichi/mobile/resume_mob.dart';
+import 'package:hafedh_gunichi/mobile/testimonials_mob.dart';
 import 'package:hafedh_gunichi/web/contact_me.dart';
 import 'package:hafedh_gunichi/web/development_skills_and_frameworks.dart';
 import 'package:hafedh_gunichi/web/education.dart';
@@ -16,6 +24,10 @@ import 'package:hafedh_gunichi/web/professional_skills.dart';
 import 'package:hafedh_gunichi/web/quotes.dart';
 import 'package:hafedh_gunichi/web/resume.dart';
 import 'package:hafedh_gunichi/web/testimonial.dart';
+
+import '../mobile/dev_mob.dart';
+import '../mobile/experience_mob.dart';
+import '../mobile/interview_mob.dart';
 
 const Color backgroundColor = Color.fromRGBO(33, 36, 40, 1);
 const Color iconContainerColor = Color.fromRGBO(24, 26, 30, 1);
@@ -45,11 +57,19 @@ const List<Map<String, dynamic>> portfolios = <Map<String, dynamic>>[
 ];
 
 const List<String> progress = <String>["COMPLETED", "IN PROGRESS"];
+
 final Map<String, Map<String, dynamic>> resumeTabBar = <String, Map<String, dynamic>>{
   "Education": {"state": true, "page": const Education(), "id": 0},
   "Professional Skills": {"state": false, "page": const ProfessionalSkills(), "id": 1},
   "Experience": {"state": false, "page": const Experience(), "id": 2},
   "Interview": {"state": false, "page": const Interview(), "id": 3},
+};
+
+final Map<String, Map<String, dynamic>> resumeTabBarMob = <String, Map<String, dynamic>>{
+  "Education": {"state": true, "page": const EducationMob(), "id": 0},
+  "Professional Skills": {"state": false, "page": const ProfessionalSkillsMob(), "id": 1},
+  "Experience": {"state": false, "page": const ExperienceMob(), "id": 2},
+  "Interview": {"state": false, "page": const InterviewMob(), "id": 3},
 };
 
 const List<Map<String, String>> education = <Map<String, String>>[
@@ -307,6 +327,70 @@ const List<Widget> professionalSkills = <Widget>[
   ),
 ];
 
+const List<Widget> professionalSkillsMob = <Widget>[
+  DevelopmentSkillsAndFrameworksMob(),
+  OtherSkills(
+    data: baaSs,
+    header: 'Backend as a Service Solutions',
+    subheader: 'The backend solutions i used through my carrer.',
+  ),
+  OtherSkills(
+    data: databases,
+    header: 'Databases & DBMSs',
+    subheader: 'Types of databases (respctively DBMSs) i worked with (Relational, NOSQL, NewSql)',
+  ),
+  OtherSkills(
+    data: vcs,
+    header: 'Version Control Systems',
+    subheader: 'Version control systems allow developers to track changes to code over time, collaborate on projects, and recover from mistakes.',
+  ),
+  OtherSkills(
+    data: ides,
+    header: 'IDEs (Integrated Development Environment)',
+    subheader: 'IDEs provide a comprehensive set of tools to help developers write, debug, and deploy code more efficiently.',
+  ),
+  OtherSkills(
+    data: gamesAndPhysicsEngines,
+    header: 'Games & Physics Engines I Knew',
+    subheader: 'Game engines provide a comprehensive set of tools and libraries to help developers create games more efficiently.',
+  ),
+  OtherSkills(
+    data: buildAutomationTools,
+    header: 'Build Automation Tools',
+    subheader: 'Build automation tools help developers to automate the process of building, testing, and deploying software.',
+  ),
+  OtherSkills(
+    data: testTools,
+    header: 'Testing Tools',
+    subheader: 'Testing tools help developers to find and fix bugs in their code before it is released to production.',
+  ),
+  OtherSkills(
+    data: solutionsDeployment,
+    header: 'Solution Deployment',
+    subheader: 'Solution deployments help developers to deploy their code to production in a consistent and repeatable way.',
+  ),
+  OtherSkills(
+    data: designTools,
+    header: 'Design Tools & Video Edition',
+    subheader: 'The design tools I used.',
+  ),
+  OtherSkills(
+    data: osAndDistributions,
+    header: 'Operation Systems & Distributions',
+    subheader: 'These are the Os(s) & the Destributions i used.',
+  ),
+  OtherSkills(
+    data: electronics,
+    header: 'Hardware',
+    subheader: "The hardware I'm using to build projects.",
+  ),
+  OtherSkills(
+    data: interestedTopics,
+    header: 'New Technologies',
+    subheader: "Topics I'm keen of",
+  ),
+];
+
 const List<Map<String, String>> testimonials = <Map<String, String>>[
   <String, String>{
     "testimony": '"I hired Hafedh GUNICHI to develop a Flutter and Firebase app for my business, and I was very impressed with his skills and expertise. He was able to quickly understand my requirements and develop an app that met my needs perfectly. The app is well-designed, easy to use, and secure. I would highly recommend him to anyone looking for a Flutter and Firebase developer."',
@@ -377,3 +461,16 @@ final List<Map<String, dynamic>> screens = <Map<String, dynamic>>[
 ];
 
 const List<String> qrCodes = <String>["Hafedh GUNICHI", "+216 23 566 502", "hafedhgunichi@gmail.com", "Mobile Developer (Flutter)"];
+
+final List<Map<String, dynamic>> screensMob = <Map<String, dynamic>>[
+  <String, dynamic>{"title": "Home", "screen": const HomeMob(), "clicked": true, "icon": "home.png"},
+  <String, dynamic>{"title": "Features", "screen": const Feature(), "clicked": false, "icon": "features.png"},
+  <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "clicked": false, "icon": "portfolio.png"},
+  <String, dynamic>{"title": "Resume", "screen": const ResumeMob(), "clicked": false, "icon": "resume.png"},
+  <String, dynamic>{"title": "Testimonies", "screen": const TestimonialMob(), "clicked": false, "icon": "testimonials.png"},
+  <String, dynamic>{"title": "Pricing", "screen": const PricingMob(), "clicked": false, "icon": "pricing.png"},
+  <String, dynamic>{"title": "Contact", "screen": const ContactMob(), "clicked": false, "icon": "contact.png"},
+  <String, dynamic>{"title": "Quotes", "screen": const QuoteMob(), "clicked": false, "icon": "quotes.png"},
+  <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "clicked": false, "icon": "info.png"},
+  <String, dynamic>{"title": "Footer", "screen": const Footer(), "clicked": false, "icon": "home.png"},
+];

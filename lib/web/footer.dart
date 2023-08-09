@@ -36,7 +36,7 @@ class _FooterState extends State<Footer> {
                 StatefulBuilder(
                   builder: (BuildContext context, void Function(void Function()) _) {
                     return InkWell(
-                      onTap: () async {},
+                      onTap: () async => _(() => _isHovered = !_isHovered),
                       onHover: (bool value) => _(() => _isHovered = value),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,

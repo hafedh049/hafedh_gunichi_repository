@@ -272,6 +272,25 @@ class _ContactState extends State<Contact> {
                               ],
                             ),
                           ),
+                          const SizedBox(height: 20),
+                          Center(
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: 50,
+                                width: 200,
+                                decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(7), border: Border.all(color: Colors.black, width: .1)),
+                                padding: const EdgeInsets.all(8),
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    CustomizedText(text: "SEND MESSAGE", color: reddish, fontSize: 20),
+                                    Icon(FontAwesomeIcons.chevronRight, color: reddish, size: 20),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

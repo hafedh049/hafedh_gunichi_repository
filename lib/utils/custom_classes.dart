@@ -97,7 +97,7 @@ class _FeatureGlassContainerState extends State<FeatureGlassContainer> {
             CustomizedText(text: widget.data["description"], color: grey),
             const SizedBox(height: 20),
             AnimatedOpacity(
-              duration: 100.ms,
+              duration: 300.ms,
               opacity: _isHovered ? 1 : 0,
               child: Visibility(
                 visible: _isHovered ? true : false,
