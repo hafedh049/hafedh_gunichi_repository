@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_barcodes/barcodes.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
@@ -50,55 +51,59 @@ class _GeneralInformationState extends State<GeneralInformation> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const CustomizedText(text: "ABOUT ME", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
+          const CustomizedText(text: "ABOUT ME", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
           const SizedBox(height: 20),
-          const CustomizedText(text: "General Info", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+          const CustomizedText(text: "General Info", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
           const SizedBox(height: 30),
           Flexible(
             child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Flexible(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(25),
-                      child: SfMaps(
-                        layers: <MapLayer>[
-                          MapShapeLayer(
-                            source: _mapSource,
-                            zoomPanBehavior: MapZoomPanBehavior(zoomLevel: 5, focalLatLng: const MapLatLng(35.108500603895118, 10.293342800422188)),
-                            color: reddish.withOpacity(.6),
-                            strokeColor: grey,
-                            strokeWidth: 2,
-                            showDataLabels: true,
-                            dataLabelSettings: MapDataLabelSettings(textStyle: GoogleFonts.roboto(color: Colors.amber, fontSize: 16)),
-                          ),
-                        ],
-                      ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Flexible(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(25),
+                        child: SfMaps(
+                          layers: <MapLayer>[
+                            MapShapeLayer(
+                              source: _mapSource,
+                              zoomPanBehavior: MapZoomPanBehavior(zoomLevel: 5, focalLatLng: const MapLatLng(35.108500603895118, 10.293342800422188)),
+                              color: reddish.withOpacity(.6),
+                              strokeColor: grey,
+                              strokeWidth: 2,
+                              showDataLabels: true,
+                              dataLabelSettings: MapDataLabelSettings(textStyle: GoogleFonts.roboto(color: Colors.amber, fontSize: 16)),
+                            ),
+                          ],
+                        ),
+                      ).animate().slide().fade(),
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    spacing: 20,
-                    runSpacing: 20,
-                    runAlignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
-                      for (final String data in qrCodes)
-                        Tooltip(
-                          preferBelow: false,
-                          message: data,
-                          child: SizedBox(
-                            width: 100,
-                            height: 100,
-                            child: SfBarcodeGenerator(value: data, symbology: QRCode(inputMode: QRInputMode.alphaNumeric), barColor: reddish),
-                          ),
-                        )
-                    ],
-                  ),
-                ],
+                    const SizedBox(height: 10),
+                    Flexible(child: Center(child: const CustomizedText(text: how, color: grey, letterSpacing: 2).animate().slide().fade())),
+                    const SizedBox(height: 10),
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 20,
+                      runSpacing: 20,
+                      runAlignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: <Widget>[
+                        for (final String data in qrCodes)
+                          Tooltip(
+                            preferBelow: false,
+                            message: data,
+                            child: SizedBox(
+                              width: 100,
+                              height: 100,
+                              child: SfBarcodeGenerator(value: data, symbology: QRCode(inputMode: QRInputMode.alphaNumeric), barColor: reddish),
+                            ),
+                          ).animate().slide().fade(),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

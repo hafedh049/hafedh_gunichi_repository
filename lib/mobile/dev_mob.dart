@@ -21,9 +21,9 @@ class DevelopmentSkillsAndFrameworksMob extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              const CustomizedText(text: "Features", fontSize: 18, color: reddish, letterSpacing: 2),
+              const CustomizedText(text: "Features", fontSize: 18, color: reddish, letterSpacing: 2).animate().slide().fade(),
               const SizedBox(height: 20),
-              const CustomizedText(text: "Development Skills", fontSize: 25, color: white, fontWeight: FontWeight.bold),
+              const CustomizedText(text: "Development Skills", fontSize: 25, color: white, fontWeight: FontWeight.bold).animate().slide().fade(),
               const SizedBox(height: 20),
               for (final MapEntry<String, double> entry in programmingLanguages.entries) ...<Widget>[
                 Column(
@@ -46,7 +46,7 @@ class DevelopmentSkillsAndFrameworksMob extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                   ],
-                ),
+                ).animate().slide().fade(),
               ],
             ],
           ),
@@ -56,12 +56,12 @@ class DevelopmentSkillsAndFrameworksMob extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const CustomizedText(text: "Features", fontSize: 18, color: reddish, letterSpacing: 2),
+            const CustomizedText(text: "Features", fontSize: 18, color: reddish, letterSpacing: 2).animate().slide().fade(),
             const SizedBox(height: 20),
-            const CustomizedText(text: "Frameworks", fontSize: 25, color: white, fontWeight: FontWeight.bold),
+            const CustomizedText(text: "Frameworks", fontSize: 25, color: white, fontWeight: FontWeight.bold).animate().slide().fade(),
             const SizedBox(height: 20),
             for (final MapEntry<String, double> entry in frameworks.entries) ...<Widget>[
-              CustomizedText(text: entry.key, color: white, fontSize: 16, letterSpacing: 2),
+              CustomizedText(text: entry.key, color: white, fontSize: 16, letterSpacing: 2).animate().slide().fade(),
               const SizedBox(height: 10),
               Center(
                 child: SimpleCircularProgressBar(
@@ -73,7 +73,7 @@ class DevelopmentSkillsAndFrameworksMob extends StatelessWidget {
                   backColor: iconContainerColor,
                   progressColors: const <Color>[Colors.pinkAccent, reddish],
                   onGetText: (double p0) => Text("${p0.toStringAsFixed(0)}%", style: GoogleFonts.roboto(fontSize: 25, letterSpacing: 2, fontWeight: FontWeight.bold, color: reddish)),
-                ),
+                ).animate().slide().fade(),
               ),
               const SizedBox(height: 20),
             ],

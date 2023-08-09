@@ -47,9 +47,9 @@ class _ContactMobState extends State<ContactMob> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              const CustomizedText(text: "Contact", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
+              const CustomizedText(text: "Contact", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
               const SizedBox(height: 20),
-              const CustomizedText(text: "Keep In Touch With Me", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+              const CustomizedText(text: "Keep In Touch With Me", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
               const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.all(24),
@@ -156,7 +156,7 @@ class _ContactMobState extends State<ContactMob> {
                     ),
                   ],
                 ),
-              ),
+              ).animate().slide().fade(),
               const SizedBox(height: 10),
               Container(
                 padding: const EdgeInsets.all(24),
@@ -275,7 +275,7 @@ class _ContactMobState extends State<ContactMob> {
                     ),
                   ],
                 ),
-              ),
+              ).animate().slide().fade(),
             ],
           ),
         ),

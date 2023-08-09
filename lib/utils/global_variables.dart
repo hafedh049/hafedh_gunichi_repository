@@ -43,20 +43,21 @@ const Color yellow = Colors.yellow;
 const String description = "I am proficient in Flutter, Django, and Firebase, which gives me the skills to build high-quality, scalable, and reliable mobile, desktop and web applications. I have a deep understanding of these technologies and how they can be used to create innovative and user-friendly applications.";
 
 const List<Map<String, dynamic>> features = <Map<String, dynamic>>[
-  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Mobile Apps", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"icon": FontAwesomeIcons.figma, "title": "Design Templates", "description": "I can design UI templates for all platforms (Web, Desktop, Android & IOS)."},
+  <String, dynamic>{"icon": FontAwesomeIcons.code, "title": "Web Applications", "description": "I can build complete web applications both frontend & backend (Flutter, Firebase, Django, ...) and so deploying them."},
+  <String, dynamic>{"icon": FontAwesomeIcons.desktop, "title": "Desktop Applications", "description": "I can create fast & reliable desktop applications using a powerful framework called Flutter."},
+  <String, dynamic>{"icon": FontAwesomeIcons.android, "title": "Android Applications", "description": "I'm able to design and create any type of application for android using Flutter."},
+  <String, dynamic>{"icon": FontAwesomeIcons.ioxhost, "title": "IOS Applications", "description": "I can build amazing IOS applications at anytime."},
+  <String, dynamic>{"icon": FontAwesomeIcons.gamepad, "title": "2-3D Games", "description": "I can create 2D games using the flutter game engine 'Flame 🔥' & Unity."},
 ];
 
 const List<Map<String, dynamic>> portfolios = <Map<String, dynamic>>[
-  <String, dynamic>{"id": 0, "image": "food_delivery.jpg", "topic": "APPLICATION", "title": "Food Delivery App", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"id": 1, "image": "dashboard.jpg", "topic": "APPLICATION", "title": "Food Delivery App", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"id": 2, "image": "food_bank.jpg", "topic": "APPLICATION", "title": "Food Delivery App", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"id": 3, "image": "games_store.jpg", "topic": "APPLICATION", "title": "Food Delivery App", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
-  <String, dynamic>{"id": 4, "image": "workout.jpg", "topic": "APPLICATION", "title": "Food Delivery App", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"id": 0, "likes": 15, "completed": true, "image": "food_delivery.jpg", "topic": "APPLICATION", "title": "Food Delivery Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"id": 1, "likes": 9, "completed": false, "image": "dashboard.jpg", "topic": "APPLICATION", "title": "Dashboard Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"id": 2, "likes": 20, "completed": true, "image": "food_bank.jpg", "topic": "APPLICATION", "title": "Online Shopping Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"id": 3, "likes": 6, "completed": false, "image": "games_store.jpg", "topic": "APPLICATION", "title": "Games Store Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
+  <String, dynamic>{"id": 4, "likes": 7, "completed": false, "image": "workout.jpg", "topic": "APPLICATION", "title": "Workout Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
 ];
-
-const List<String> progress = <String>["COMPLETED", "IN PROGRESS"];
 
 final Map<String, Map<String, dynamic>> resumeTabBar = <String, Map<String, dynamic>>{
   "Education": {"state": true, "page": const Education(), "id": 0},
@@ -110,34 +111,35 @@ const List<Map<String, String>> experience = <Map<String, String>>[
     "title": "End Of Study (PFE Project)",
     "subtitle": "Faculty Of Medecin (MONASTIR) [Feb -> July, 2023]",
     "state": "PASSED",
-    "description": "",
+    "description":
+        "The goal of this project was to create a mobile application that would allow patients with highly dangerous diseases to receive treatment from doctors and nurses remotely. The application would use the Flutter framework to develop a cross-platform application that could be used on both Android and iOS devices. The Firebase platform would be used to store patient data and to provide real-time communication between patients and doctors.\nThe application would have the following features:\n\nPatient registration: Patients would be able to register for the application by providing their basic information, such as their name, age, and contact information.\nDoctor registration: Doctors would be able to register for the application by providing their medical credentials.\nPatient-doctor chat: Patients would be able to chat with doctors in real time to discuss their medical conditions and treatment options.\nDoctor-patient video conferencing: Doctors would be able to conduct video conferences with patients to provide more detailed medical examinations and treatment plans.\nBloodborne pathogen accident reporting: Patients and healthcare workers would be able to report Bloodborne pathogen accidents through the application.\nMedical records storage: The application would store patient medical records in the cloud, so that they can be accessed by doctors and nurses from anywhere.\nThis project would have a number of benefits for patients and healthcare workers, including:\nImproved access to healthcare: Patients in rural areas or who have difficulty traveling would be able to receive treatment from doctors and nurses remotely.\nReduced wait times: Patients would not have to wait long to see a doctor, as they could chat with doctors or conduct video conferences in real time.\nImproved communication: Patients and doctors would be able to communicate more effectively through the application, which would lead to better diagnosis and treatment.\nIncreased safety: The application would help to prevent the spread of Bloodborne pathogens by providing a way for patients and healthcare workers to report accidents.\nImproved data management: The application would store patient medical records in the cloud, which would make it easier for doctors and nurses to access and share patient information.\n\nOverall, this project would be a valuable tool for patients with highly dangerous diseases and for healthcare workers. It would improve access to healthcare, reduce wait times, improve communication, increase safety, and improve data management.",
   },
   <String, String>{
     "title": "Flutter Developer",
     "subtitle": "ACI (Jun -> July, 2022)",
     "state": "PASSED",
-    "description": "",
+    "description": "I Used Flutter & Firebase to develop an android application that generates QR Code to clients then save it in the cloud, so the hardware components can have access to these data. Its a merge between IOT & MOBILE DEVELOPMENT.",
   },
   <String, String>{
     "title": "Freelance",
-    "subtitle": "Fiverr (2020 -> OO)",
-    "state": "PASSED",
-    "description": "",
+    "subtitle": "Fiverr (2022 -> OO)",
+    "state": "LIFETIME",
+    "description": "Freelancing on Fiverr can be a great way to have fun and make money as a mobile developer with Flutter. You can use your skills to create a variety of projects, from simple scripts to complex mobile apps. You can also work on a variety of platforms, including Android, iOS, and web.",
   },
 ];
 
 const List<Map<String, String>> interview = <Map<String, String>>[
   <String, String>{
     "title": "Proxym",
+    "state": "GOOD",
     "subtitle": "Flutter Developer",
-    "state": "PENDING",
-    "description": "",
+    "description": '"I am excited to be interviewing for the study and work in parallel position as a Flutter developer at Proxym. I have been working as a Flutter developer for the past two years, and I have a strong understanding of the platform. I am also proficient in other programming languages, such as Java and Python. In my previous role, I was responsible for developing and maintaining a Flutter application for a large enterprise client. I have a proven track record of delivering high-quality software on time and within budget. I am also a quick learner and I am always eager to take on new challenges. I am confident that I have the skills and experience that you are looking for in a Flutter developer. I am also interested in the opportunity to study and work in parallel. I believe that this will allow me to further develop my skills and knowledge in Flutter, while also gaining valuable experience in the workforce. I am a hard worker and I am dedicated to my craft. I am also a team player and I am always willing to help others. I am confident that I would be a valuable asset to your team. Thank you for your time and consideration."',
   },
   <String, String>{
     "title": "Fiverr",
+    "state": "PERFECT",
     "subtitle": "Flutter Expert",
-    "state": "PASSED",
-    "description": "",
+    "description": '"Working as a freelance mobile developer and designer on Fiverr can be a great way to use your skills to make money and build a portfolio. Fiverr is a global marketplace where businesses and individuals can find freelancers to complete a variety of tasks, including mobile app development and design. As a freelance mobile developer and designer on Fiverr, you can set your own rates and work on projects that interest you. You can also work from anywhere in the world, which gives you a lot of flexibility.To be successful as a freelance mobile developer and designer on Fiverr, you need to have a strong portfolio of work. You should also be able to communicate effectively with clients and deliver high-quality work on time and within budget. If you have these skills, then working as a freelance mobile developer and designer on Fiverr can be a great way to build a successful career."',
   },
 ];
 
@@ -448,29 +450,30 @@ const List<String> quotes = <String>[
 ];
 
 final List<Map<String, dynamic>> screens = <Map<String, dynamic>>[
-  <String, dynamic>{"title": "Home", "screen": const Home(), "state": false, "clicked": true},
-  <String, dynamic>{"title": "Features", "screen": const Feature(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Resume", "screen": const Resume(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Testimonies", "screen": const Testimonail(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Pricing", "screen": const Pricing(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Contact", "screen": const Contact(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Quotes", "screen": const Quote(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "state": false, "clicked": false},
-  <String, dynamic>{"title": "Footer", "screen": const Footer(), "state": false, "clicked": false},
+  <String, dynamic>{"title": "Home", "screen": const Home(), "state": false},
+  <String, dynamic>{"title": "Features", "screen": const Feature(), "state": false},
+  <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "state": false},
+  <String, dynamic>{"title": "Resume", "screen": const Resume(), "state": false},
+  <String, dynamic>{"title": "Testimonies", "screen": const Testimonail(), "state": false},
+  <String, dynamic>{"title": "Pricing", "screen": const Pricing(), "state": false},
+  <String, dynamic>{"title": "Contact", "screen": const Contact(), "state": false},
+  <String, dynamic>{"title": "Quotes", "screen": const Quote(), "state": false},
+  <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "state": false},
+  <String, dynamic>{"title": "Footer", "screen": const Footer(), "state": false},
 ];
 
 const List<String> qrCodes = <String>["Hafedh GUNICHI", "+216 23 566 502", "hafedhgunichi@gmail.com", "Mobile Developer (Flutter)"];
 
 final List<Map<String, dynamic>> screensMob = <Map<String, dynamic>>[
-  <String, dynamic>{"title": "Home", "screen": const HomeMob(), "clicked": true, "icon": "home.png"},
-  <String, dynamic>{"title": "Features", "screen": const Feature(), "clicked": false, "icon": "features.png"},
-  <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "clicked": false, "icon": "portfolio.png"},
-  <String, dynamic>{"title": "Resume", "screen": const ResumeMob(), "clicked": false, "icon": "resume.png"},
-  <String, dynamic>{"title": "Testimonies", "screen": const TestimonialMob(), "clicked": false, "icon": "testimonials.png"},
-  <String, dynamic>{"title": "Pricing", "screen": const PricingMob(), "clicked": false, "icon": "pricing.png"},
-  <String, dynamic>{"title": "Contact", "screen": const ContactMob(), "clicked": false, "icon": "contact.png"},
-  <String, dynamic>{"title": "Quotes", "screen": const QuoteMob(), "clicked": false, "icon": "quotes.png"},
-  <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "clicked": false, "icon": "info.png"},
-  <String, dynamic>{"title": "Footer", "screen": const Footer(), "clicked": false, "icon": "home.png"},
+  <String, dynamic>{"title": "Home", "screen": const HomeMob(), "icon": "home.png"},
+  <String, dynamic>{"title": "Features", "screen": const Feature(), "icon": "features.png"},
+  <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "icon": "portfolio.png"},
+  <String, dynamic>{"title": "Resume", "screen": const ResumeMob(), "icon": "resume.png"},
+  <String, dynamic>{"title": "Testimonies", "screen": const TestimonialMob(), "icon": "testimonials.png"},
+  <String, dynamic>{"title": "Pricing", "screen": const PricingMob(), "icon": "price-tag.png"},
+  <String, dynamic>{"title": "Contact", "screen": const ContactMob(), "icon": "contact.png"},
+  <String, dynamic>{"title": "Quotes", "screen": const QuoteMob(), "icon": "quotes.png"},
+  <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "icon": "info.png"},
 ];
+
+const String how = '"I created my portfolio using Flutter, a cross-platform mobile development framework. I chose Flutter because it is a powerful and versatile framework that allows me to develop high-quality reliable & cross-platform applications. I hosted my portfolio on Firebase, a cloud-based platform that provides a variety of services for mobile developers, such as hosting, authentication, and database storage. I did not use any state management libraries like BLoC or GetX for my portfolio. Instead, I used stateful builders to manage the state of my app. This allowed me to have more control over the state of my app and to make it more efficient. I also made sure that my code was optimized and organized so that it followed the DRY approach."';

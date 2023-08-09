@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hafedh_gunichi/web/price_plan.dart';
 
 import '../utils/custom_classes.dart';
@@ -32,12 +33,12 @@ class _PricingState extends State<Pricing> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Column(
+            Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                CustomizedText(text: "PRICING PLAN", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
-                SizedBox(height: 20),
-                CustomizedText(text: "My Pricing", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+                const CustomizedText(text: "PRICING PLAN", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
+                const SizedBox(height: 20),
+                const CustomizedText(text: "My Pricing", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
               ],
             ),
             const SizedBox(width: 60),
@@ -95,7 +96,7 @@ class _PricingState extends State<Pricing> {
                       controller: _pageController,
                       itemCount: plans.length,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (BuildContext context, int index) => PricePlan(plan: plans[index]),
+                      itemBuilder: (BuildContext context, int index) => PricePlan(plan: plans[index]).animate().slide().fade(),
                     ),
                   ),
                 ],

@@ -34,13 +34,13 @@ class _QuoteMobState extends State<QuoteMob> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const CustomizedText(text: "GOLDEN WORDS", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
+          const CustomizedText(text: "GOLDEN WORDS", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
           const SizedBox(height: 20),
-          const CustomizedText(text: "Best Quotes", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+          const CustomizedText(text: "Best Quotes", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
           const SizedBox(height: 30),
           Flexible(
             child: Center(
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -61,17 +61,16 @@ class _QuoteMobState extends State<QuoteMob> {
                         ),
                       );
                     },
-                  ),
-                  const SizedBox(width: 20),
+                  ).animate().slide().fade(),
+                  const SizedBox(height: 20),
                   Flexible(
-                    child: SizedBox(
-                      height: MediaQuery.sizeOf(context).height * .5,
-                      child: PageView.builder(
-                        controller: _pageController,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: quotes.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return StatefulBuilder(builder: (BuildContext context, void Function(void Function()) _) {
+                    child: PageView.builder(
+                      controller: _pageController,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: quotes.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return StatefulBuilder(
+                          builder: (BuildContext context, void Function(void Function()) _) {
                             return InkWell(
                               onTap: () => true,
                               onHover: (bool value) => _(() => _isHovered = value),
@@ -92,12 +91,12 @@ class _QuoteMobState extends State<QuoteMob> {
                                 ),
                               ),
                             );
-                          });
-                        },
-                      ),
+                          },
+                        ).animate().slide().fade();
+                      },
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(height: 20),
                   StatefulBuilder(
                     builder: (BuildContext context, void Function(void Function()) _) {
                       return InkWell(
@@ -115,7 +114,7 @@ class _QuoteMobState extends State<QuoteMob> {
                         ),
                       );
                     },
-                  ),
+                  ).animate().slide().fade(),
                 ],
               ),
             ),

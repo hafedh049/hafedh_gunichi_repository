@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../utils/custom_classes.dart';
 import '../utils/global_variables.dart';
@@ -30,9 +31,9 @@ class _ResumeMobState extends State<ResumeMob> {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const CustomizedText(text: "3+ YEARS OF EXPERIENCE", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 2),
+          const CustomizedText(text: "3+ YEARS OF EXPERIENCE", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
           const SizedBox(height: 20),
-          const CustomizedText(text: "My Resume", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+          const CustomizedText(text: "My Resume", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
           const SizedBox(height: 20),
           Container(
             width: MediaQuery.sizeOf(context).width * .8,
@@ -74,7 +75,7 @@ class _ResumeMobState extends State<ResumeMob> {
                 );
               },
             ),
-          ),
+          ).animate().slide().fade(),
           const SizedBox(height: 10),
           Expanded(
             child: PageView.builder(

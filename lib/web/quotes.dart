@@ -34,9 +34,9 @@ class _QuoteState extends State<Quote> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const CustomizedText(text: "GOLDEN WORDS", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
+          const CustomizedText(text: "GOLDEN WORDS", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
           const SizedBox(height: 20),
-          const CustomizedText(text: "Best Quotes", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+          const CustomizedText(text: "Best Quotes", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
           const SizedBox(height: 30),
           Flexible(
             child: Center(
@@ -61,7 +61,7 @@ class _QuoteState extends State<Quote> {
                         ),
                       );
                     },
-                  ),
+                  ).animate().slide().fade(),
                   const SizedBox(width: 20),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * .6,
@@ -95,7 +95,7 @@ class _QuoteState extends State<Quote> {
                         });
                       },
                     ),
-                  ),
+                  ).animate().slide().fade(),
                   const SizedBox(width: 20),
                   StatefulBuilder(
                     builder: (BuildContext context, void Function(void Function()) _) {
@@ -114,7 +114,7 @@ class _QuoteState extends State<Quote> {
                         ),
                       );
                     },
-                  ),
+                  ).animate().slide().fade(),
                 ],
               ),
             ),

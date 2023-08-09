@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hafedh_gunichi/mobile/pricing_plan_mob.dart';
 
 import '../utils/custom_classes.dart';
@@ -31,9 +32,9 @@ class _PricingMobState extends State<PricingMob> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const CustomizedText(text: "PRICING PLAN", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
+            const CustomizedText(text: "PRICING PLAN", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
             const SizedBox(height: 20),
-            const CustomizedText(text: "My Pricing", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+            const CustomizedText(text: "My Pricing", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
             const SizedBox(height: 10),
             Flexible(
               child: Container(
@@ -88,7 +89,7 @@ class _PricingMobState extends State<PricingMob> {
                         controller: _pageController,
                         itemCount: plans.length,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (BuildContext context, int index) => PricePlanMob(plan: plans[index]),
+                        itemBuilder: (BuildContext context, int index) => PricePlanMob(plan: plans[index]).animate().slide().fade(),
                       ),
                     ),
                   ],

@@ -34,9 +34,9 @@ class _TestimonailState extends State<Testimonail> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const CustomizedText(text: "WHAT CLIENTS SAY", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),
+          const CustomizedText(text: "WHAT CLIENTS SAY", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3).animate().slide().fade(),
           const SizedBox(height: 20),
-          const CustomizedText(text: "Testimonial", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2),
+          const CustomizedText(text: "Testimonial", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
           const SizedBox(height: 30),
           Flexible(
             child: PageView.builder(
@@ -176,7 +176,7 @@ class _TestimonailState extends State<Testimonail> {
                       ),
                     ),
                   ],
-                );
+                ).animate().slide().fade();
               },
             ),
           ),
@@ -207,7 +207,7 @@ class _TestimonailState extends State<Testimonail> {
               activeColorOverride: (int i) => Colors.primaries[i],
               inActiveColorOverride: (int i) => Colors.primaries[i],
             ),
-          ),
+          ).animate().slide().fade(),
         ],
       ),
     );

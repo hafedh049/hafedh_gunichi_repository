@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -122,7 +121,6 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
   bool _isHovered = false;
   bool _heartHovered = false;
   bool _titleHovered = false;
-  final String _progress = progress[Random().nextInt(2)];
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -148,63 +146,123 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
             content: SizedBox(
               width: MediaQuery.sizeOf(context).width * .7,
               height: MediaQuery.sizeOf(context).height * .5,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(image: AssetImage("assets/images/${widget.data['image']}"), fit: BoxFit.cover),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 30),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
+              child: MediaQuery.sizeOf(context).width < 1320
+                  ? Column(
                       children: <Widget>[
-                        CustomizedText(text: "Featured - ${widget.data['topic']}", color: grey, fontSize: 16, fontWeight: FontWeight.w500),
-                        const SizedBox(height: 20),
-                        CustomizedText(text: "${widget.data['title']}.", fontWeight: FontWeight.bold, fontSize: 25),
-                        const SizedBox(height: 20),
-                        CustomizedText(text: widget.data['description'], color: grey),
-                        const SizedBox(height: 20),
-                        Row(
-                          children: <Widget>[
-                            Container(
-                              width: 150,
-                              height: 50,
-                              decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
-                              padding: const EdgeInsets.all(12),
-                              child: const Center(
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    CustomizedText(text: "LIKE THIS", color: reddish, fontWeight: FontWeight.bold),
-                                    SizedBox(width: 5),
-                                    Icon(FontAwesomeIcons.thumbsUp, color: reddish, size: 15),
-                                  ],
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(image: AssetImage("assets/images/${widget.data['image']}"), fit: BoxFit.cover),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                CustomizedText(text: "Featured - ${widget.data['topic']}", color: grey, fontSize: 16, fontWeight: FontWeight.w500),
+                                const SizedBox(height: 20),
+                                CustomizedText(text: "${widget.data['title']}.", fontWeight: FontWeight.bold, fontSize: 25),
+                                const SizedBox(height: 20),
+                                Flexible(child: SingleChildScrollView(child: CustomizedText(text: widget.data['description'], color: grey))),
+                                const SizedBox(height: 10),
+                                Center(
+                                  child: Container(
+                                    width: 150,
+                                    height: 50,
+                                    decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
+                                    padding: const EdgeInsets.all(12),
+                                    child: const Center(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          CustomizedText(text: "LIKE THIS", color: reddish, fontWeight: FontWeight.bold),
+                                          SizedBox(width: 5),
+                                          Icon(FontAwesomeIcons.thumbsUp, color: reddish, size: 15),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                const SizedBox(height: 10),
+                                Center(
+                                  child: Container(
+                                    width: 150,
+                                    height: 50,
+                                    decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Center(
+                                      child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            const SizedBox(width: 30),
-                            Container(
-                              width: 150,
-                              height: 50,
-                              decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
-                              padding: const EdgeInsets.all(8),
-                              child: const Center(
-                                child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
-                              ),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(image: AssetImage("assets/images/${widget.data['image']}"), fit: BoxFit.cover),
                             ),
-                          ],
+                          ),
+                        ),
+                        const SizedBox(width: 30),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              CustomizedText(text: "Featured - ${widget.data['topic']}", color: grey, fontSize: 16, fontWeight: FontWeight.w500),
+                              const SizedBox(height: 20),
+                              CustomizedText(text: "${widget.data['title']}.", fontWeight: FontWeight.bold, fontSize: 25),
+                              const SizedBox(height: 20),
+                              Flexible(child: SingleChildScrollView(child: CustomizedText(text: widget.data['description'], color: grey))),
+                              const SizedBox(height: 20),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 150,
+                                    height: 50,
+                                    decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
+                                    padding: const EdgeInsets.all(12),
+                                    child: const Center(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          CustomizedText(text: "LIKE THIS", color: reddish, fontWeight: FontWeight.bold),
+                                          SizedBox(width: 5),
+                                          Icon(FontAwesomeIcons.thumbsUp, color: reddish, size: 15),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 30),
+                                  Container(
+                                    width: 150,
+                                    height: 50,
+                                    decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Center(
+                                      child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
             ),
           ),
         ),
@@ -225,6 +283,7 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
           children: <Widget>[
             Expanded(
               child: Container(
+                width: 352,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
@@ -249,7 +308,7 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    const CustomizedText(text: "600", color: grey, fontSize: 16, fontWeight: FontWeight.w500),
+                    CustomizedText(text: widget.data["likes"].toString(), color: grey, fontSize: 16, fontWeight: FontWeight.w500),
                   ],
                 ),
               ],
@@ -282,7 +341,7 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
                 Container(
                   decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(3), border: Border.all(color: grey, width: .1)),
                   padding: const EdgeInsets.all(8),
-                  child: CustomizedText(text: _progress, color: _progress == "COMPLETED" ? green : reddish, fontWeight: FontWeight.bold),
+                  child: CustomizedText(text: widget.data["completed"] ? "COMPLETED" : "IN PROGRESS", color: widget.data["completed"] ? green : reddish, fontWeight: FontWeight.bold),
                 ).animate(onComplete: (AnimationController controller) => controller.repeat(reverse: true)).shimmer(duration: 3.seconds, color: grey.withOpacity(.2), colors: <Color>[grey.withOpacity(.1), white.withOpacity(.2)]),
               ],
             ),
@@ -400,7 +459,7 @@ class _EducationGlassState extends State<EducationGlass> {
                     const SizedBox(height: 20),
                     const Divider(indent: 15, endIndent: 15, color: grey, height: .3, thickness: .3),
                     const SizedBox(height: 20),
-                    Flexible(child: CustomizedText(text: widget.data["description"], color: grey, fontSize: 16)),
+                    Flexible(child: SingleChildScrollView(child: CustomizedText(text: widget.data["description"], color: grey, fontSize: 16))),
                   ],
                 ),
               ),
