@@ -78,16 +78,20 @@ class _QuoteMobState extends State<QuoteMob> {
                                 duration: 300.ms,
                                 padding: const EdgeInsets.all(48),
                                 decoration: BoxDecoration(color: _isHovered ? hoverediconContainerColor : iconContainerColor, borderRadius: BorderRadius.circular(25)),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    Row(children: <Widget>[Icon(FontAwesomeIcons.quoteLeft, size: 60, color: _isHovered ? reddish : grey), const Spacer()]),
-                                    const SizedBox(height: 10),
-                                    Flexible(child: SingleChildScrollView(child: CustomizedText(text: quotes[index], color: reddish, fontWeight: FontWeight.bold, letterSpacing: 2, fontSize: 20))),
-                                    const SizedBox(height: 10),
-                                    Row(children: <Widget>[const Spacer(), Icon(FontAwesomeIcons.quoteRight, size: 60, color: _isHovered ? reddish : grey)]),
-                                  ],
+                                child: Center(
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        Row(children: <Widget>[Icon(FontAwesomeIcons.quoteLeft, size: 60, color: _isHovered ? reddish : grey), const Spacer()]),
+                                        const SizedBox(height: 10),
+                                        Flexible(child: CustomizedText(text: quotes[index], color: reddish, fontWeight: FontWeight.bold, letterSpacing: 2, fontSize: 20)),
+                                        const SizedBox(height: 10),
+                                        Row(children: <Widget>[const Spacer(), Icon(FontAwesomeIcons.quoteRight, size: 60, color: _isHovered ? reddish : grey)]),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             );

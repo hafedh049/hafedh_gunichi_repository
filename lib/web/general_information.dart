@@ -1,6 +1,12 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hafedh_gunichi/utils/functions.dart';
 import 'package:syncfusion_flutter_barcodes/barcodes.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
 
@@ -101,6 +107,28 @@ class _GeneralInformationState extends State<GeneralInformation> {
                             ),
                           ).animate().slide().fade(),
                       ],
+                    ),
+                    const SizedBox(height: 10),
+                    AnimatedButton(
+                      text: "DOWNLOAD CV",
+                      animatedOn: AnimatedOn.onHover,
+                      animationDuration: 1500.ms,
+                      borderColor: reddish,
+                      borderRadius: 0,
+                      borderWidth: .3,
+                      onPress: () {
+                        AnchorElement anchorElement = AnchorElement(href: 'assets/files/Hafedh GUNICHI CV.pdf');
+                        anchorElement.setAttribute('download', 'file.pdf');
+                        anchorElement.click();
+                        showToast("CV HAS BEEN DOWNLOADED SUCCESSFULLY");
+                      },
+                      selectedBackgroundColor: white,
+                      backgroundColor: reddish.withOpacity(.8),
+                      selectedTextColor: Colors.black,
+                      height: 50,
+                      width: 150,
+                      transitionType: TransitionType.CENTER_ROUNDER,
+                      textStyle: GoogleFonts.roboto(color: white, fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

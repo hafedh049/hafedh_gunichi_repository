@@ -37,21 +37,23 @@ class PricePlanMob extends StatelessWidget {
           const SizedBox(height: 40),
           CustomizedText(text: plan['description'], color: grey, fontSize: 16, letterSpacing: 2),
           const Spacer(),
-          SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                for (final String task in plan["tasks"]) ...<Widget>[
-                  Row(
-                    children: <Widget>[
-                      Icon(FontAwesomeIcons.check, color: white.withOpacity(.8), size: 20),
-                      const SizedBox(width: 5),
-                      CustomizedText(text: task, color: white.withOpacity(.8), fontSize: 18),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
+          Flexible(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  for (final String task in plan["tasks"]) ...<Widget>[
+                    Row(
+                      children: <Widget>[
+                        Icon(FontAwesomeIcons.check, color: white.withOpacity(.8), size: 20),
+                        const SizedBox(width: 5),
+                        CustomizedText(text: task, color: white.withOpacity(.8), fontSize: 18),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
           const Spacer(),

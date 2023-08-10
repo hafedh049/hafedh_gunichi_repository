@@ -76,7 +76,7 @@ class _ResumeMobState extends State<ResumeMob> {
               },
             ),
           ).animate().slide().fade(),
-          const SizedBox(height: 10),
+          const SizedBox(height: 20),
           Expanded(
             child: PageView.builder(
               itemCount: 4,

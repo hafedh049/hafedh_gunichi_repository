@@ -118,9 +118,11 @@ class PorfolioGlass extends StatefulWidget {
 }
 
 class _PorfolioGlassState extends State<PorfolioGlass> {
+  final GlobalKey _likesKey = GlobalKey();
   bool _isHovered = false;
   bool _heartHovered = false;
   bool _titleHovered = false;
+  bool _isLiked = false;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -176,27 +178,42 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
                                     height: 50,
                                     decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
                                     padding: const EdgeInsets.all(12),
-                                    child: const Center(
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          CustomizedText(text: "LIKE THIS", color: reddish, fontWeight: FontWeight.bold),
-                                          SizedBox(width: 5),
-                                          Icon(FontAwesomeIcons.thumbsUp, color: reddish, size: 15),
-                                        ],
+                                    child: Center(
+                                      child: StatefulBuilder(
+                                        builder: (BuildContext context, void Function(void Function()) _) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              _(() => _isLiked = !_isLiked);
+                                              widget.data['i like it'] = _isLiked;
+                                              widget.data['likes'] += _isLiked ? 1 : -1;
+                                              _likesKey.currentState!.setState(() {});
+                                            },
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: <Widget>[
+                                                CustomizedText(text: _isLiked ? "LIKED" : "LIKE THIS", color: _isLiked ? green : reddish, fontWeight: FontWeight.bold),
+                                                const SizedBox(width: 5),
+                                                Icon(_isLiked ? FontAwesomeIcons.check : FontAwesomeIcons.thumbsUp, color: _isLiked ? green : reddish, size: 15),
+                                              ],
+                                            ),
+                                          );
+                                        },
                                       ),
                                     ),
                                   ),
                                 ),
                                 const SizedBox(height: 10),
                                 Center(
-                                  child: Container(
-                                    width: 150,
-                                    height: 50,
-                                    decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
-                                    padding: const EdgeInsets.all(8),
-                                    child: const Center(
-                                      child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
+                                  child: GestureDetector(
+                                    onTap: () => launchUrlString(widget.data['url']),
+                                    child: Container(
+                                      width: 150,
+                                      height: 50,
+                                      decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
+                                      padding: const EdgeInsets.all(8),
+                                      child: const Center(
+                                        child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -235,25 +252,40 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
                                     height: 50,
                                     decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
                                     padding: const EdgeInsets.all(12),
-                                    child: const Center(
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          CustomizedText(text: "LIKE THIS", color: reddish, fontWeight: FontWeight.bold),
-                                          SizedBox(width: 5),
-                                          Icon(FontAwesomeIcons.thumbsUp, color: reddish, size: 15),
-                                        ],
+                                    child: Center(
+                                      child: StatefulBuilder(
+                                        builder: (BuildContext context, void Function(void Function()) _) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              _(() => _isLiked = !_isLiked);
+                                              widget.data['i like it'] = _isLiked;
+                                              widget.data['likes'] += _isLiked ? 1 : -1;
+                                              _likesKey.currentState!.setState(() {});
+                                            },
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: <Widget>[
+                                                CustomizedText(text: _isLiked ? "LIKED" : "LIKE THIS", color: _isLiked ? green : reddish, fontWeight: FontWeight.bold),
+                                                const SizedBox(width: 5),
+                                                Icon(_isLiked ? FontAwesomeIcons.check : FontAwesomeIcons.thumbsUp, color: _isLiked ? green : reddish, size: 15),
+                                              ],
+                                            ),
+                                          );
+                                        },
                                       ),
                                     ),
                                   ),
                                   const SizedBox(width: 30),
-                                  Container(
-                                    width: 150,
-                                    height: 50,
-                                    decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
-                                    padding: const EdgeInsets.all(8),
-                                    child: const Center(
-                                      child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
+                                  GestureDetector(
+                                    onTap: () => launchUrlString(widget.data['url']),
+                                    child: Container(
+                                      width: 150,
+                                      height: 50,
+                                      decoration: BoxDecoration(color: hoverediconContainerColor, borderRadius: BorderRadius.circular(5)),
+                                      padding: const EdgeInsets.all(8),
+                                      child: const Center(
+                                        child: CustomizedText(text: "VIEW PROJECT", color: reddish, fontWeight: FontWeight.bold),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -308,7 +340,12 @@ class _PorfolioGlassState extends State<PorfolioGlass> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    CustomizedText(text: widget.data["likes"].toString(), color: grey, fontSize: 16, fontWeight: FontWeight.w500),
+                    StatefulBuilder(
+                      key: _likesKey,
+                      builder: (BuildContext context, void Function(void Function()) _) {
+                        return CustomizedText(text: widget.data["likes"].toString(), color: grey, fontSize: 16, fontWeight: FontWeight.w500);
+                      },
+                    ),
                   ],
                 ),
               ],

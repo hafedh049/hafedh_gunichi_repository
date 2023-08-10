@@ -4,6 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:hafedh_gunichi/utils/custom_classes.dart';
 import 'package:hafedh_gunichi/utils/global_variables.dart';
+import 'package:lottie/lottie.dart';
 
 class Holder extends StatefulWidget {
   const Holder({super.key});
@@ -51,7 +52,22 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraint) {
         //1025 , 790
-        if (constraint.maxHeight >= 790 && constraint.maxWidth >= 1320) {
+        if (constraint.maxHeight < 600) {
+          return Scaffold(
+            body: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Flexible(child: LottieBuilder.asset("assets/lotties/resize.json")),
+                  const CustomizedText(text: "Oops, the screen is too small.", fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2),
+                  const SizedBox(height: 30),
+                ],
+              ),
+            ),
+            backgroundColor: backgroundColor,
+          );
+        } else if (constraint.maxHeight >= 790 && constraint.maxWidth >= 1320) {
           return Scaffold(
             backgroundColor: backgroundColor,
             body: Stack(
@@ -152,50 +168,54 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
                       const Center(child: CircleAvatar(radius: 30, backgroundColor: backgroundColor, backgroundImage: AssetImage("assets/images/me.jpg"))),
                       const SizedBox(height: 20),
                       const Center(child: CustomizedText(text: "Hafedh GUNICHI", color: white, fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 2)),
-                      const Spacer(),
-                      StatefulBuilder(
-                        key: _mobileHeadersKey,
-                        builder: (BuildContext context, void Function(void Function()) _) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              for (final Map<String, dynamic> item in screensMob) ...<Widget>[
-                                InkWell(
-                                  splashColor: backgroundColor,
-                                  focusColor: backgroundColor,
-                                  highlightColor: backgroundColor,
-                                  onTap: () {
-                                    _(() => _selectedHeader = item["title"]);
-                                    _drawerKey.currentState!.closeSlider();
-                                    _scrollbar.animateTo(MediaQuery.sizeOf(context).height * screensMob.indexOf(item), duration: 500.ms, curve: Curves.linear);
-                                    _animationController.reverse();
-                                    _menuIsOpen = !_menuIsOpen;
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      color: _selectedHeader == item["title"] ? reddish.withOpacity(.3) : null,
-                                      borderRadius: const BorderRadius.only(topRight: Radius.circular(15), bottomRight: Radius.circular(15)),
-                                      border: _selectedHeader == item["title"] ? Border.all(color: reddish, width: .5) : null,
+                      const SizedBox(height: 20),
+                      Flexible(
+                        child: StatefulBuilder(
+                          key: _mobileHeadersKey,
+                          builder: (BuildContext context, void Function(void Function()) _) {
+                            return SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  for (final Map<String, dynamic> item in screensMob) ...<Widget>[
+                                    InkWell(
+                                      splashColor: backgroundColor,
+                                      focusColor: backgroundColor,
+                                      highlightColor: backgroundColor,
+                                      onTap: () {
+                                        _(() => _selectedHeader = item["title"]);
+                                        _drawerKey.currentState!.closeSlider();
+                                        _scrollbar.animateTo(MediaQuery.sizeOf(context).height * screensMob.indexOf(item), duration: 500.ms, curve: Curves.linear);
+                                        _animationController.reverse();
+                                        _menuIsOpen = !_menuIsOpen;
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                                          color: _selectedHeader == item["title"] ? reddish.withOpacity(.3) : null,
+                                          borderRadius: const BorderRadius.only(topRight: Radius.circular(15), bottomRight: Radius.circular(15)),
+                                          border: _selectedHeader == item["title"] ? Border.all(color: reddish, width: .5) : null,
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: <Widget>[
+                                            CircleAvatar(backgroundColor: backgroundColor, backgroundImage: AssetImage("icons/${item['icon']}"), radius: 15),
+                                            const SizedBox(width: 10),
+                                            CustomizedText(text: item['title'], color: white, letterSpacing: 2),
+                                          ],
+                                        ),
+                                      ),
                                     ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: <Widget>[
-                                        CircleAvatar(backgroundColor: backgroundColor, backgroundImage: AssetImage("icons/${item['icon']}"), radius: 15),
-                                        const SizedBox(width: 10),
-                                        CustomizedText(text: item['title'], color: white, letterSpacing: 2),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                              ],
-                            ],
-                          );
-                        },
+                                    const SizedBox(height: 10),
+                                  ],
+                                ],
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                      const Spacer(),
+                      const SizedBox(height: 20),
                       const CustomizedText(text: "© 2022. All rights reserved by", color: grey, letterSpacing: 2),
                       const SizedBox(height: 5),
                       StatefulBuilder(
