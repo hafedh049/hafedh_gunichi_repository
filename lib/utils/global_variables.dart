@@ -3,11 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hafedh_gunichi/mobile/contact_mob.dart';
 import 'package:hafedh_gunichi/mobile/education_mob.dart';
 import 'package:hafedh_gunichi/mobile/home_mob.dart';
-import 'package:hafedh_gunichi/mobile/price_mob.dart';
 import 'package:hafedh_gunichi/mobile/professional_skill_mob.dart';
-import 'package:hafedh_gunichi/mobile/quotes_mob.dart';
 import 'package:hafedh_gunichi/mobile/resume_mob.dart';
-import 'package:hafedh_gunichi/mobile/testimonials_mob.dart';
 import 'package:hafedh_gunichi/web/contact_me.dart';
 import 'package:hafedh_gunichi/web/development_skills_and_frameworks.dart';
 import 'package:hafedh_gunichi/web/education.dart';
@@ -19,11 +16,8 @@ import 'package:hafedh_gunichi/web/home.dart';
 import 'package:hafedh_gunichi/web/interview.dart';
 import 'package:hafedh_gunichi/web/other_skills.dart';
 import 'package:hafedh_gunichi/web/portfolio.dart';
-import 'package:hafedh_gunichi/web/pricing.dart';
 import 'package:hafedh_gunichi/web/professional_skills.dart';
-import 'package:hafedh_gunichi/web/quotes.dart';
 import 'package:hafedh_gunichi/web/resume.dart';
-import 'package:hafedh_gunichi/web/testimonial.dart';
 
 import '../mobile/dev_mob.dart';
 import '../mobile/experience_mob.dart';
@@ -59,18 +53,18 @@ const List<Map<String, dynamic>> portfolios = <Map<String, dynamic>>[
   <String, dynamic>{"id": 4, "likes": 7, "completed": false, "i like it": false, 'url': "", "image": "workout.jpg", "topic": "APPLICATION", "title": "Workout Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
 ];
 
-final Map<String, Map<String, dynamic>> resumeTabBar = <String, Map<String, dynamic>>{
-  "Education": {"state": true, "page": const Education(), "id": 0},
-  "Professional Skills": {"state": false, "page": const ProfessionalSkills(), "id": 1},
-  "Experience": {"state": false, "page": const Experience(), "id": 2},
-  "Interview": {"state": false, "page": const Interview(), "id": 3},
+const Map<String, Map<String, dynamic>> resumeTabBar = <String, Map<String, dynamic>>{
+  "Education": <String, dynamic>{"state": true, "page": Education(), "id": 0},
+  "Professional Skills": <String, dynamic>{"state": false, "page": ProfessionalSkills(), "id": 1},
+  "Experience": <String, dynamic>{"state": false, "page": Experience(), "id": 2},
+  "Interview": <String, dynamic>{"state": false, "page": Interview(), "id": 3},
 };
 
-final Map<String, Map<String, dynamic>> resumeTabBarMob = <String, Map<String, dynamic>>{
-  "Education": {"state": true, "page": const EducationMob(), "id": 0},
-  "Professional Skills": {"state": false, "page": const ProfessionalSkillsMob(), "id": 1},
-  "Experience": {"state": false, "page": const ExperienceMob(), "id": 2},
-  "Interview": {"state": false, "page": const InterviewMob(), "id": 3},
+const Map<String, Map<String, dynamic>> resumeTabBarMob = <String, Map<String, dynamic>>{
+  "Education": <String, dynamic>{"state": true, "page": EducationMob(), "id": 0},
+  "Professional Skills": <String, dynamic>{"state": false, "page": ProfessionalSkillsMob(), "id": 1},
+  "Experience": <String, dynamic>{"state": false, "page": ExperienceMob(), "id": 2},
+  "Interview": <String, dynamic>{"state": false, "page": InterviewMob(), "id": 3},
 };
 
 const List<Map<String, String>> education = <Map<String, String>>[
@@ -144,31 +138,31 @@ const List<Map<String, String>> interview = <Map<String, String>>[
 ];
 
 const Map<String, double> programmingLanguages = <String, double>{
-  "Dart": 95,
-  "Python": 95,
+  "Dart": 100,
+  "Python": 100,
   "Mojo": 95,
-  "C": 80,
-  "JAVA": 83,
-  "C# / C++": 60,
-  "JavaScript": 70,
-  "PHP": 60,
-  "Ruby": 20,
-  "Swift": 20,
-  "Kotlin": 30,
+  "C": 95,
+  "JAVA": 90,
+  "C# / C++": 80,
+  "JavaScript": 80,
+  "PHP": 80,
+  "Ruby": 40,
+  "Swift": 30,
+  "Kotlin": 50,
   "Go": 30,
-  "SQL": 80,
-  "HTML": 80,
+  "SQL": 90,
+  "HTML": 95,
 };
 
 const Map<String, double> frameworks = <String, double>{
-  "Flutter": 95,
-  "Dart Frog": 90,
+  "Flutter": 100,
+  "Dart Frog": 95,
   "Django": 75,
-  "Flask": 80,
-  "Spring Boot": 20,
-  "Laravel": 10,
-  "Angular": 38,
-  "TailWind": 45,
+  "Flask": 100,
+  "Spring Boot": 60,
+  "Laravel": 40,
+  "Angular": 40,
+  "TailWind": 80,
   "Bootstrap": 50,
 };
 
@@ -454,10 +448,7 @@ final List<Map<String, dynamic>> screens = <Map<String, dynamic>>[
   <String, dynamic>{"title": "Features", "screen": const Feature(), "state": false},
   <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "state": false},
   <String, dynamic>{"title": "Resume", "screen": const Resume(), "state": false},
-  <String, dynamic>{"title": "Testimonies", "screen": const Testimonail(), "state": false},
-  <String, dynamic>{"title": "Pricing", "screen": const Pricing(), "state": false},
   <String, dynamic>{"title": "Contact", "screen": const Contact(), "state": false},
-  <String, dynamic>{"title": "Quotes", "screen": const Quote(), "state": false},
   <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "state": false},
   <String, dynamic>{"title": "Footer", "screen": const Footer(), "state": false},
 ];
@@ -469,10 +460,7 @@ final List<Map<String, dynamic>> screensMob = <Map<String, dynamic>>[
   <String, dynamic>{"title": "Features", "screen": const Feature(), "icon": "features.png"},
   <String, dynamic>{"title": "Portfolio", "screen": const Portfolio(), "icon": "portfolio.png"},
   <String, dynamic>{"title": "Resume", "screen": const ResumeMob(), "icon": "resume.png"},
-  <String, dynamic>{"title": "Testimonies", "screen": const TestimonialMob(), "icon": "testimonials.png"},
-  <String, dynamic>{"title": "Pricing", "screen": const PricingMob(), "icon": "price-tag.png"},
   <String, dynamic>{"title": "Contact", "screen": const ContactMob(), "icon": "contact.png"},
-  <String, dynamic>{"title": "Quotes", "screen": const QuoteMob(), "icon": "quotes.png"},
   <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "icon": "info.png"},
 ];
 

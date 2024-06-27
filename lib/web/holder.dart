@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:hafedh_gunichi/utils/custom_classes.dart';
 import 'package:hafedh_gunichi/utils/global_variables.dart';
@@ -25,7 +24,6 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    FlutterNativeSplash.remove();
     _animationController = AnimationController(vsync: this, duration: 1.seconds);
     _scrollbar.addListener(
       () {
@@ -51,7 +49,6 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraint) {
-        //1025 , 790
         if (constraint.maxHeight < 600) {
           return Scaffold(
             body: Center(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hafedh_gunichi/web/holder.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +11,10 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Holder(),
+      title: "Hafedh GUENICHI",
+    );
   }
 }
