@@ -11,31 +11,27 @@ class Portfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(48),
-      width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height,
       color: backgroundColor,
       child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: const CustomizedText(text: "VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK", color: reddish, letterSpacing: 2)),
-            const SizedBox(height: 20),
-            Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: const CustomizedText(text: "My Portfolio", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2)),
-            const SizedBox(height: 20),
-            Flexible(
-              child: SingleChildScrollView(
-                child: Wrap(
-                  spacing: 40,
-                  runSpacing: 40,
-                  children: <Widget>[
-                    for (final Map<String, dynamic> app in portfolios) Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: PorfolioGlass(data: app))
-                  ],
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: const CustomizedText(text: "VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK", color: reddish, letterSpacing: 2)),
+              const SizedBox(height: 20),
+              Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: const CustomizedText(text: "My Portfolio", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2)),
+              const SizedBox(height: 20),
+              Wrap(
+                spacing: 40,
+                runSpacing: 40,
+                children: <Widget>[
+                  for (final Map<String, dynamic> app in portfolios) Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: PorfolioGlass(data: app))
+                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

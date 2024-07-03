@@ -7,6 +7,7 @@ class ProfessionalSkills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: true,
       itemCount: professionalSkills.length,
       physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.zero,

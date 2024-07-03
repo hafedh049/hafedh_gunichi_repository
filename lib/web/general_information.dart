@@ -117,8 +117,8 @@ class _GeneralInformationState extends State<GeneralInformation> {
                       borderRadius: 0,
                       borderWidth: .3,
                       onPress: () {
-                        AnchorElement anchorElement = AnchorElement(href: 'assets/files/Hafedh GUNICHI CV.pdf');
-                        anchorElement.setAttribute('download', 'file.pdf');
+                        final AnchorElement anchorElement = AnchorElement(href: 'assets/assets/files/Hafedh GUENICHI.pdf');
+                        anchorElement.setAttribute('download', 'Hafedh GUENICHI.pdf');
                         anchorElement.click();
                         showToast("CV HAS BEEN DOWNLOADED SUCCESSFULLY");
                       },

@@ -10,6 +10,7 @@ class Interview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         const CustomizedText(text: "2023", color: reddish, fontWeight: FontWeight.bold, letterSpacing: 3),

@@ -11,32 +11,28 @@ class Feature extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(48),
-      width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height,
       color: backgroundColor,
       child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const CustomizedText(text: "FEATURES", color: reddish, letterSpacing: 2).animate().slide().fade(),
-            const SizedBox(height: 20),
-            const CustomizedText(text: "WHAT I DO ?", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
-            const SizedBox(height: 20),
-            Flexible(
-              child: SingleChildScrollView(
-                child: Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.end,
-                  spacing: 40,
-                  runSpacing: 40,
-                  children: <Widget>[
-                    for (final Map<String, dynamic> feature in features) Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: FeatureGlassContainer(data: feature))
-                  ],
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const CustomizedText(text: "FEATURES", color: reddish, letterSpacing: 2).animate().slide().fade(),
+              const SizedBox(height: 20),
+              const CustomizedText(text: "WHAT I DO ?", fontSize: 50, fontWeight: FontWeight.bold, letterSpacing: 2).animate().slide().fade(),
+              const SizedBox(height: 20),
+              Wrap(
+                crossAxisAlignment: WrapCrossAlignment.end,
+                spacing: 40,
+                runSpacing: 40,
+                children: <Widget>[
+                  for (final Map<String, dynamic> feature in features) Animate(effects: const <Effect>[FadeEffect(), SlideEffect()], child: FeatureGlassContainer(data: feature))
+                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

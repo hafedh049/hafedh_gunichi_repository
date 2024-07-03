@@ -10,7 +10,7 @@ import 'package:hafedh_gunichi/web/development_skills_and_frameworks.dart';
 import 'package:hafedh_gunichi/web/education.dart';
 import 'package:hafedh_gunichi/web/experience.dart';
 import 'package:hafedh_gunichi/web/features.dart';
-import 'package:hafedh_gunichi/web/footer.dart';
+//import 'package:hafedh_gunichi/web/footer.dart';
 import 'package:hafedh_gunichi/web/general_information.dart';
 import 'package:hafedh_gunichi/web/home.dart';
 import 'package:hafedh_gunichi/web/interview.dart';
@@ -53,18 +53,18 @@ const List<Map<String, dynamic>> portfolios = <Map<String, dynamic>>[
   <String, dynamic>{"id": 4, "likes": 7, "completed": false, "i like it": false, 'url': "", "image": "workout.jpg", "topic": "APPLICATION", "title": "Workout Application", "description": "I can use Flutter's powerful features to create beautiful and engaging user interfaces. I can also use Django and Firebase to build scalable and reliable backend systems."},
 ];
 
-const Map<String, Map<String, dynamic>> resumeTabBar = <String, Map<String, dynamic>>{
-  "Education": <String, dynamic>{"state": true, "page": Education(), "id": 0},
-  "Professional Skills": <String, dynamic>{"state": false, "page": ProfessionalSkills(), "id": 1},
-  "Experience": <String, dynamic>{"state": false, "page": Experience(), "id": 2},
-  "Interview": <String, dynamic>{"state": false, "page": Interview(), "id": 3},
+final Map<String, Map<String, dynamic>> resumeTabBar = <String, Map<String, dynamic>>{
+  "Education": <String, dynamic>{"state": true, "page": const Education(), "id": 0},
+  "Professional Skills": <String, dynamic>{"state": false, "page": const ProfessionalSkills(), "id": 1},
+  "Experience": <String, dynamic>{"state": false, "page": const Experience(), "id": 2},
+  "Interview": <String, dynamic>{"state": false, "page": const Interview(), "id": 3},
 };
 
-const Map<String, Map<String, dynamic>> resumeTabBarMob = <String, Map<String, dynamic>>{
-  "Education": <String, dynamic>{"state": true, "page": EducationMob(), "id": 0},
-  "Professional Skills": <String, dynamic>{"state": false, "page": ProfessionalSkillsMob(), "id": 1},
-  "Experience": <String, dynamic>{"state": false, "page": ExperienceMob(), "id": 2},
-  "Interview": <String, dynamic>{"state": false, "page": InterviewMob(), "id": 3},
+final Map<String, Map<String, dynamic>> resumeTabBarMob = <String, Map<String, dynamic>>{
+  "Education": <String, dynamic>{"state": true, "page": const EducationMob(), "id": 0},
+  "Professional Skills": <String, dynamic>{"state": false, "page": const ProfessionalSkillsMob(), "id": 1},
+  "Experience": <String, dynamic>{"state": false, "page": const ExperienceMob(), "id": 2},
+  "Interview": <String, dynamic>{"state": false, "page": const InterviewMob(), "id": 3},
 };
 
 const List<Map<String, String>> education = <Map<String, String>>[
@@ -114,12 +114,6 @@ const List<Map<String, String>> experience = <Map<String, String>>[
     "state": "PASSED",
     "description": "I Used Flutter & Firebase to develop an android application that generates QR Code to clients then save it in the cloud, so the hardware components can have access to these data. Its a merge between IOT & MOBILE DEVELOPMENT.",
   },
-  <String, String>{
-    "title": "Freelance",
-    "subtitle": "Fiverr (2022 -> OO)",
-    "state": "LIFETIME",
-    "description": "Freelancing on Fiverr can be a great way to have fun and make money as a mobile developer with Flutter. You can use your skills to create a variety of projects, from simple scripts to complex mobile apps. You can also work on a variety of platforms, including Android, iOS, and web.",
-  },
 ];
 
 const List<Map<String, String>> interview = <Map<String, String>>[
@@ -128,12 +122,6 @@ const List<Map<String, String>> interview = <Map<String, String>>[
     "state": "GOOD",
     "subtitle": "Flutter Developer",
     "description": '"I am excited to be interviewing for the study and work in parallel position as a Flutter developer at Proxym. I have been working as a Flutter developer for the past two years, and I have a strong understanding of the platform. I am also proficient in other programming languages, such as Java and Python. In my previous role, I was responsible for developing and maintaining a Flutter application for a large enterprise client. I have a proven track record of delivering high-quality software on time and within budget. I am also a quick learner and I am always eager to take on new challenges. I am confident that I have the skills and experience that you are looking for in a Flutter developer. I am also interested in the opportunity to study and work in parallel. I believe that this will allow me to further develop my skills and knowledge in Flutter, while also gaining valuable experience in the workforce. I am a hard worker and I am dedicated to my craft. I am also a team player and I am always willing to help others. I am confident that I would be a valuable asset to your team. Thank you for your time and consideration."',
-  },
-  <String, String>{
-    "title": "Fiverr",
-    "state": "PERFECT",
-    "subtitle": "Flutter Expert",
-    "description": '"Working as a freelance mobile developer and designer on Fiverr can be a great way to use your skills to make money and build a portfolio. Fiverr is a global marketplace where businesses and individuals can find freelancers to complete a variety of tasks, including mobile app development and design. As a freelance mobile developer and designer on Fiverr, you can set your own rates and work on projects that interest you. You can also work from anywhere in the world, which gives you a lot of flexibility.To be successful as a freelance mobile developer and designer on Fiverr, you need to have a strong portfolio of work. You should also be able to communicate effectively with clients and deliver high-quality work on time and within budget. If you have these skills, then working as a freelance mobile developer and designer on Fiverr can be a great way to build a successful career."',
   },
 ];
 
@@ -169,7 +157,7 @@ const Map<String, double> frameworks = <String, double>{
 const Map<String, Map<String, dynamic>> baaSs = <String, Map<String, dynamic>>{
   "Firebase": <String, dynamic>{"image": "icons/firebase.png", "description": "Firebase is a set of backend cloud computing services and application development platforms provided by Google. It hosts databases, services, authentication, and integration for a variety of applications, including Android, iOS, JavaScript, Node.js, Java, Unity, PHP, and C++."},
   "Supabase": <String, dynamic>{"image": "images/supabase.png", "description": "Supabase is a fully-managed, open-source alternative to Firebase that offers a similar set of features. It is a good option for developers who want a scalable and reliable platform without the need to manage their own infrastructure."},
-  "AppWrite": <String, dynamic>{"image": "images/appwrite.png", "description": "Appwrite is a self-hosted, open-source BaaS platform that offers a wide range of features, including real-time data storage, authentication and authorization, push notifications, and hosting. It is a good option for developers who want more control over their infrastructure."},
+  //"AppWrite": <String, dynamic>{"image": "images/appwrite.png", "description": "Appwrite is a self-hosted, open-source BaaS platform that offers a wide range of features, including real-time data storage, authentication and authorization, push notifications, and hosting. It is a good option for developers who want more control over their infrastructure."},
 };
 
 const Map<String, Map<String, dynamic>> databases = <String, Map<String, dynamic>>{
@@ -178,18 +166,18 @@ const Map<String, Map<String, dynamic>> databases = <String, Map<String, dynamic
   "Oracle Database": <String, dynamic>{"image": "images/oracle.png", "description": "Oracle Database is a commercial RDBMS that is owned by Oracle Corporation. It is one of the most powerful and scalable databases available, and is used by a wide range of enterprise applications."},
   "Microsoft SQL Server": <String, dynamic>{"image": "images/sql_server.png", "description": "Microsoft SQL Server is a commercial RDBMS that is owned by Microsoft. It is a popular choice for Windows-based applications, and offers a wide range of features, including support for XML data and replication."},
   "MongoDB": <String, dynamic>{"image": "images/mongo_db.png", "description": "MongoDB is a NoSQL database that is document-oriented. This means that data is stored in JSON documents, which makes it more flexible than traditional RDBMSs. MongoDB is a popular choice for web applications and mobile applications."},
-  "Cassandra": <String, dynamic>{"image": "images/cassandra.png", "description": "Apache Cassandra is a distributed NoSQL database that is designed to be scalable and fault-tolerant. It is a good option for applications that need to be able to handle a lot of data and that need to be able to recover from failures."},
-  "Milvus": <String, dynamic>{"image": "images/milvus.png", "description": "Milvus is a vector database that is designed to be scalable and efficient. It is a good option for applications that need to be able to store and query large amounts of high-dimensional data."},
-  "Neo4j": <String, dynamic>{"image": "images/neo4j.png", "description": "Neo4j is a graph database that is designed to be able to store and query relationships between data. It is a good option for applications that need to be able to represent and analyze relationships between data."},
-  "CockroachDB": <String, dynamic>{"image": "images/cockroach_db.png", "description": "CockroachDB (NewSQL) is a distributed SQL database that is designed for high availability, scalability, and horizontal scaling. It is a popular choice for web applications, microservices, and other applications that need to be able to handle a lot of traffic."},
+  //"Cassandra": <String, dynamic>{"image": "images/cassandra.png", "description": "Apache Cassandra is a distributed NoSQL database that is designed to be scalable and fault-tolerant. It is a good option for applications that need to be able to handle a lot of data and that need to be able to recover from failures."},
+  //"Milvus": <String, dynamic>{"image": "images/milvus.png", "description": "Milvus is a vector database that is designed to be scalable and efficient. It is a good option for applications that need to be able to store and query large amounts of high-dimensional data."},
+  //"Neo4j": <String, dynamic>{"image": "images/neo4j.png", "description": "Neo4j is a graph database that is designed to be able to store and query relationships between data. It is a good option for applications that need to be able to represent and analyze relationships between data."},
+  //"CockroachDB": <String, dynamic>{"image": "images/cockroach_db.png", "description": "CockroachDB (NewSQL) is a distributed SQL database that is designed for high availability, scalability, and horizontal scaling. It is a popular choice for web applications, microservices, and other applications that need to be able to handle a lot of traffic."},
 };
 
 const Map<String, Map<String, dynamic>> vcs = <String, Map<String, dynamic>>{
   "Git": <String, dynamic>{"image": "images/git.png", "description": "Git is a distributed version control system that is free and open-source. It is one of the most popular version control systems in the world, and is used by a wide range of developers, including those who work on open-source projects and those who work on commercial projects."},
   "Github": <String, dynamic>{"image": "images/github.png", "description": "GitHub is a popular cloud-based Git repository hosting service. It offers a wide range of features, including issue tracking, pull requests, and code reviews. GitHub is a good choice for developers who want to collaborate on open-source projects or who want to use a hosted Git service."},
-  "BitBucket": <String, dynamic>{"image": "images/bitbucket.png", "description": "Bitbucket is a cloud-based Git repository hosting service that is owned by Atlassian. It offers a wide range of features, including issue tracking, pull requests, and code reviews. Bitbucket is a good choice for developers who want to collaborate on commercial projects or who want a hosted Git service with atlassian integration."},
+  //"BitBucket": <String, dynamic>{"image": "images/bitbucket.png", "description": "Bitbucket is a cloud-based Git repository hosting service that is owned by Atlassian. It offers a wide range of features, including issue tracking, pull requests, and code reviews. Bitbucket is a good choice for developers who want to collaborate on commercial projects or who want a hosted Git service with atlassian integration."},
   "Gitlab": <String, dynamic>{"image": "images/gitlab.png", "description": "GitLab is a self-hosted Git repository hosting service that offers a wide range of features, including issue tracking, pull requests, and code reviews. GitLab is a good choice for developers who want to self-host their Git repository or who want a more feature-rich Git service than GitHub"},
-  "Azure DevOps": <String, dynamic>{"image": "images/azure_devops.png", "description": "Azure DevOps is a cloud-based version control system that is owned by Microsoft. It offers a wide range of features, including issue tracking, pull requests, code reviews, and build automation. Azure DevOps is a good choice for developers who want to use a hosted Git service with Microsoft integration."},
+  //"Azure DevOps": <String, dynamic>{"image": "images/azure_devops.png", "description": "Azure DevOps is a cloud-based version control system that is owned by Microsoft. It offers a wide range of features, including issue tracking, pull requests, code reviews, and build automation. Azure DevOps is a good choice for developers who want to use a hosted Git service with Microsoft integration."},
 };
 
 const Map<String, Map<String, dynamic>> ides = <String, Map<String, dynamic>>{
@@ -206,17 +194,17 @@ const Map<String, Map<String, dynamic>> gamesAndPhysicsEngines = <String, Map<St
   "Unity": <String, dynamic>{"image": "images/unity.png", "description": "Unity is a popular game engine that is used to create 2D and 3D games. It is a popular choice for indie developers and AAA studios alike. Unity is known for its ease of use, its powerful features, and its large community of developers."},
   "Unreal Engine": <String, dynamic>{"image": "images/ue.png", "description": "Unreal Engine is a popular game engine that is used to create 3D games. It is a popular choice for AAA studios, and is known for its high-quality graphics and its powerful physics engine. Unreal Engine is also used to create real-time cinematics and simulations."},
   "Flame": <String, dynamic>{"image": "images/flame.png", "description": "Flame is a modular Flutter game engine that provides a complete set of out-of-the-way solutions for games. It takes advantage of the powerful infrastructure provided by Flutter but simplifies the code you need to build your projects."},
-  "Panda3D": <String, dynamic>{"image": "images/panda3d.png", "description": "Panda3D is a game engine that includes graphics, audio, I/O, collision detection, and other abilities relevant to the creation of 3D games. Panda3D is free, open-source software under the revised BSD license. Panda3D's intended game-development language is Python"},
+  //"Panda3D": <String, dynamic>{"image": "images/panda3d.png", "description": "Panda3D is a game engine that includes graphics, audio, I/O, collision detection, and other abilities relevant to the creation of 3D games. Panda3D is free, open-source software under the revised BSD license. Panda3D's intended game-development language is Python"},
   "Pymunk": <String, dynamic>{"image": "images/pymunk.png", "description": "Pymunk is an easy-to-use pythonic 2d physics library that can be used whenever you need 2d rigid body physics from Python. Perfect when you need 2d physics in your game, demo or simulation! It is built on top of the very capable 2d physics library Chipmunk."},
-  "Havok": <String, dynamic>{"image": "images/havok.png", "description": "Havok is a physics engine that is developed by Havok. It is used in a variety of games, including Grand Theft Auto and The Elder Scrolls. Havok is known for its realism and its ability to handle large numbers of objects."},
-  "Bullet": <String, dynamic>{"image": "images/bullet.png", "description": "Bullet is a popular physics engine that is used in a variety of games, including Unity and Unreal Engine. It is known for its accuracy and performance."},
-  "PhysX": <String, dynamic>{"image": "images/physx.png", "description": "PhysX is a physics engine that is developed by NVIDIA. It is used in a variety of games, including Call of Duty and Battlefield. PhysX is known for its power and its ability to handle complex physics simulations."},
+  //"Havok": <String, dynamic>{"image": "images/havok.png", "description": "Havok is a physics engine that is developed by Havok. It is used in a variety of games, including Grand Theft Auto and The Elder Scrolls. Havok is known for its realism and its ability to handle large numbers of objects."},
+  //"Bullet": <String, dynamic>{"image": "images/bullet.png", "description": "Bullet is a popular physics engine that is used in a variety of games, including Unity and Unreal Engine. It is known for its accuracy and performance."},
+  //"PhysX": <String, dynamic>{"image": "images/physx.png", "description": "PhysX is a physics engine that is developed by NVIDIA. It is used in a variety of games, including Call of Duty and Battlefield. PhysX is known for its power and its ability to handle complex physics simulations."},
 };
 
 const Map<String, Map<String, dynamic>> buildAutomationTools = <String, Map<String, dynamic>>{
   "Maven": <String, dynamic>{"image": "images/maven.png", "description": "Maven is an open-source build automation tool that is based on the Java language. Maven is known for its simplicity and its ability to be used with a variety of projects."},
   "Gradle": <String, dynamic>{"image": "images/gradle.png", "description": "Gradle is an open-source build automation tool that is based on the Groovy language. Gradle is known for its powerful features and its ability to be used with a variety of programming languages."},
-  "Jenkins": <String, dynamic>{"image": "images/jenkins.png", "description": "Jenkins is an open-source automation server that can be used to automate a wide range of tasks, including building, testing, and deploying software. Jenkins is known for its flexibility and its large community of plugins."},
+  //"Jenkins": <String, dynamic>{"image": "images/jenkins.png", "description": "Jenkins is an open-source automation server that can be used to automate a wide range of tasks, including building, testing, and deploying software. Jenkins is known for its flexibility and its large community of plugins."},
   "Codemagic": <String, dynamic>{"image": "images/codemagic.jpg", "description": "Codemagic is a build automation tool. It is a cloud-based service that automates the process of building, testing, and deploying mobile apps. Codemagic can be used to build apps for Android, iOS, and React Native."},
 };
 
@@ -229,7 +217,7 @@ const Map<String, Map<String, dynamic>> testTools = <String, Map<String, dynamic
 
 const Map<String, Map<String, dynamic>> solutionsDeployment = <String, Map<String, dynamic>>{
   "Docker Swarm": <String, dynamic>{"image": "images/docker.png", "description": "Docker Swarm is a container orchestration system that is built on top of Docker. It is used to automate the deployment, scaling, and management of Docker containers."},
-  "Kubernetes": <String, dynamic>{"image": "images/kubernetes.png", "description": "Kubernetes is an open-source container orchestration system. It is used to automate the deployment, scaling, and management of containerized applications."},
+  //"Kubernetes": <String, dynamic>{"image": "images/kubernetes.png", "description": "Kubernetes is an open-source container orchestration system. It is used to automate the deployment, scaling, and management of containerized applications."},
 };
 
 const Map<String, Map<String, dynamic>> designTools = <String, Map<String, dynamic>>{
@@ -387,61 +375,8 @@ const List<Widget> professionalSkillsMob = <Widget>[
   ),
 ];
 
-const List<Map<String, String>> testimonials = <Map<String, String>>[
-  <String, String>{
-    "testimony": '"I hired Hafedh GUNICHI to develop a Flutter and Firebase app for my business, and I was very impressed with his skills and expertise. He was able to quickly understand my requirements and develop an app that met my needs perfectly. The app is well-designed, easy to use, and secure. I would highly recommend him to anyone looking for a Flutter and Firebase developer."',
-    "job": 'SILMA',
-    "name": 'Faycel Zayani',
-    "position": 'CEO',
-    "image": "testimonial.png",
-    "todo": 'Business Application',
-    "period": 'Aug 4, 2022 - Sep 1, 2022',
-    "rating": "4",
-  },
-];
-
-final List<Map<String, dynamic>> pricingTabs = <Map<String, dynamic>>[
-  {"header": "Static", "hover": true, "id": 0},
-  {"header": "Standard", "hover": false, "id": 1},
-  {"header": "Premium", "hover": false, "id": 2},
-];
-
-const List<Map<String, dynamic>> plans = <Map<String, dynamic>>[
-  <String, dynamic>{
-    "title": "Silver Package",
-    "subtitle": "HARD CODED",
-    "description": "1 Page - Static Information App with Splash Screen as a gift.",
-    "price": "30",
-    "tasks": <String>["Functional app", "2 operating systems", "App icon", "Splash screen", "Source code"],
-    "delivery": "10 Days Delivery",
-  },
-  <String, dynamic>{
-    "title": "Gold Package",
-    "subtitle": "HARD CODED",
-    "description": "5 Pages - Dynamic and Responsive App with Signup, Login, Firebase Auth, Profile and Database.",
-    "price": "60",
-    "tasks": <String>["Functional app", "2 operating systems", "App icon", "Splash screen", "Source code"],
-    "delivery": "21 Days Delivery",
-  },
-  <String, dynamic>{
-    "title": "Platinum Package",
-    "subtitle": "HARD CODED",
-    "description": "15 Pages - Large Scale, High Quality App with Geo-Fencing, Chat, Payments, Backend Server and More.",
-    "price": "90",
-    "tasks": <String>["Functional app", "2 operating systems", "App icon", "Splash screen", "Source code"],
-    "delivery": "30 Days Delivery",
-  },
-];
-
 const String myPhoneNumber = "+216 23 566 502";
 const String myEmail = "hafedhgunichi@gmail.com";
-
-const List<String> quotes = <String>[
-  '"The only thing that is constant is change." - Heraclitus',
-  '"The journey of a thousand miles begins with a single step." - Lao Tzu',
-  '"The best way to predict the future is to create it." - Peter Drucker',
-  '"The only way to do great work is to love what you do." - Steve Jobs',
-];
 
 final List<Map<String, dynamic>> screens = <Map<String, dynamic>>[
   <String, dynamic>{"title": "Home", "screen": const Home(), "state": false},
@@ -450,7 +385,7 @@ final List<Map<String, dynamic>> screens = <Map<String, dynamic>>[
   <String, dynamic>{"title": "Resume", "screen": const Resume(), "state": false},
   <String, dynamic>{"title": "Contact", "screen": const Contact(), "state": false},
   <String, dynamic>{"title": "About Me", "screen": const GeneralInformation(), "state": false},
-  <String, dynamic>{"title": "Footer", "screen": const Footer(), "state": false},
+  // <String, dynamic>{"title": "Footer", "screen": const Footer(), "state": false},
 ];
 
 const List<String> qrCodes = <String>["Hafedh GUNICHI", "+216 23 566 502", "hafedhgunichi@gmail.com", "Mobile Developer (Flutter)"];
