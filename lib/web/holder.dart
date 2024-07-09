@@ -103,7 +103,7 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
                                 InkWell(
                                   onHover: (bool value) => _(() => item["state"] = value),
                                   onTap: () {
-                                    _screensController.animateToPage(screens.indexOf(item), duration: 500.ms, curve: Curves.linear);
+                                    _screensController.jumpToPage(screens.indexOf(item));
                                     _(() => _selectedHeader = item["title"]);
                                   },
                                   child: Container(
@@ -178,7 +178,7 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
                                     onTap: () {
                                       _(() => _selectedHeader = item["title"]);
                                       _drawerKey.currentState!.closeSlider();
-                                      _screensController.animateToPage(screensMob.indexOf(item), duration: 500.ms, curve: Curves.linear);
+                                      _screensController.jumpToPage(screensMob.indexOf(item));
                                       _animationController.reverse();
                                       _menuIsOpen = !_menuIsOpen;
                                     },
@@ -192,7 +192,7 @@ class _HolderState extends State<Holder> with SingleTickerProviderStateMixin {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: <Widget>[
-                                          CircleAvatar(backgroundColor: backgroundColor, backgroundImage: AssetImage("assets/assets/icons/${item['icon']}"), radius: 15),
+                                          CircleAvatar(backgroundColor: backgroundColor, backgroundImage: AssetImage("assets/icons/${item['icon']}"), radius: 15),
                                           const SizedBox(width: 10),
                                           CustomizedText(text: item['title'], color: white, letterSpacing: 2),
                                         ],
